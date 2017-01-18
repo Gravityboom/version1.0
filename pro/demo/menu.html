@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>menu</title>
+	<link rel="stylesheet" href="common.css">
+	<style type="text/css">
+		body{margin:0 auto;}
+		.menu{width:150px;height:100px;font-size:20px;}
+		a{display:block;width:150px;height:32px;line-height:32px;color:#555;border-bottom:1px solid #999;}
+		.level2{display:none;background-color: #f0f0f0;height:128px;width:150px;font-size:15px;}
+	</style>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			/*function Count(){
+				this.count = 0;
+			}*/
+			/*$(".level1>a").attr({"count":0});
+			console.log($(".level1>a").attr("count"));*/
+
+			$(".level1>a").click(function(){
+				//next选中所有当前a之后的同辈元素ul
+				//slideDown 显示二级菜单
+				//选中父元素 level1
+				//选中父元素的所有同辈元素 level1(不包括自己的父元素)
+				//选中父元素所有同辈元素level1的子元素a
+				$(this).next().slideDown().parent().siblings().children("ul").slideUp();
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div class="menu">
+		<li class="level1">
+			<a href="#">第一章</a>
+			<ul class="level2">
+				<li><a href="">第一节</a></li>
+				<li><a href="">第二节</a></li>
+				<li><a href="">第三节</a></li>
+				<li><a href="">第四节</a></li>
+			</ul>
+		</li>
+
+		<li class="level1">
+			<a href="#">第二章</a>
+			<ul class="level2">
+				<li><a href="">第一节</a></li>
+				<li><a href="">第二节</a></li>
+				<li><a href="">第三节</a></li>
+				<li><a href="">第四节</a></li>
+			</ul>
+		</li>
+
+		<li class="level1">
+			<a href="#">第三章</a>
+			<ul class="level2">
+				<li><a href="">第一节</a></li>
+				<li><a href="">第二节</a></li>
+				<li><a href="">第三节</a></li>
+				<li><a href="">第四节</a></li>
+			</ul>
+		</li>
+	</div>
+	
+</body>
+</html>

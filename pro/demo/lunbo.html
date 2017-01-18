@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lunbo</title>
+</head>
+<body>
+<script src="jquery.js"></script>
+	<script>
+		function Slider(){
+			this.age = 100;
+		}
+		function Blinds(){
+			this.blinds = 100;
+		}
+		$(function(){
+			var _obj = {
+				"slider":new Slider(),
+				"blinds":new Blinds()
+			}
+			$.extend(_obj);//jquery中的继承 .extend
+			console.log($.slider);
+			$.fn.extend(_obj);
+			console.log($.fn);
+		});
+	</script>
+</body>
+</html>
