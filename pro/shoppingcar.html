@@ -164,15 +164,16 @@
 			</colgroup>
 			<thead>
 				<tr class="shopcar_main_tit">
-					<th><input id="check_all" type="checkbox"></th>
+					<th><input class="check_all" type="checkbox"></th>
 					<th colspan="2">商品/选项详情</th>
 					<th>数量</th>		
 					<th>商品价格</th>
 					<th>优惠价</th>
 					<th>订单</th>
 				</tr>
+			</thead>
 				<tr class="shop_product_list shop_product_list_1">
-					<th><input class="check_it" type="checkbox"></th>
+					<th><input class="c11 check_it" type="checkbox"></th>
 					<th class="shop_car_img">
 						<a href="#">
 							<img src="images/1668965754_B.jpg" alt="">
@@ -184,7 +185,7 @@
 						<li>15. 闪亮护发精华 180ML*4 / 数量: 1 / + $ 1.75</li>
 					</th>	
 					<th class="count">
-						<input type="text" value="1">
+						<input type="text" readonly value="1">
 						<button>修改</button>
 					</th>
 					<th class="price">
@@ -200,7 +201,7 @@
 					</th>
 				</tr>
 				<tr class="shop_product_list shop_product_list_2">
-					<th><input class="check_it" type="checkbox"></th>
+					<th><input class="c22 check_it" type="checkbox"></th>
 					<th class="shop_car_img">
 						<a href="#">
 							<img src="images/1668965754_B.jpg" alt="">
@@ -212,7 +213,7 @@
 						<li>15. 闪亮护发精华 180ML*4 / 数量: 1 / + $ 1.75</li>
 					</th>	
 					<th class="count">
-						<input type="text" value="1">
+						<input type="text" readonly value="1">
 						<button>修改</button>
 					</th>
 					<th class="price">
@@ -228,7 +229,7 @@
 					</th>
 				</tr>
 				<tr class="shop_product_list shop_product_list_3">
-					<th><input class="check_it" type="checkbox"></th>
+					<th><input class="c33 check_it" type="checkbox"></th>
 					<th class="shop_car_img">
 						<a href="#">
 							<img src="images/1668965754_B.jpg" alt="">
@@ -240,7 +241,7 @@
 						<li>15. 闪亮护发精华 180ML*4 / 数量: 1 / + $ 1.75</li>
 					</th>	
 					<th class="count">
-						<input type="text" value="1">
+						<input type="text" readonly value="1">
 						<button>修改</button>
 					</th>
 					<th class="price">
@@ -255,10 +256,51 @@
 						<button>删除</button>
 					</th>
 				</tr>
-			</thead>
 		</table>
+		<div class="fun_btn">
+			<input type="checkbox" class="check_all">
+			<span>选择商品</span>
+			<button class="delete_all control_all">删除</button>
+			<button class="control_all">收藏</button>
+		</div>
+		<div class="total_box">
+			<div class="set_amount">
+				<div class="origin">
+
+					<p>订单金额</p>
+					<b>$</b><span class="p1">0</span>
+					<div class="change_rmb">
+						(约<b>￥</b><span class="rmb_value">0</span>)
+					</div>
+				</div>
+				<div class="cost">
+					<i class="plus"></i>
+					<p>运费</p>
+					<b>$</b><span class="p2">0</span>
+					<div class="change_rmb">
+						(约<b>￥</b><span class="rmb_value">0</span>)
+					</div>
+				</div>
+				<div class="cut">
+					<i class="reduce"></i>
+					<p>优惠金额</p>
+					<b>$</b><span class="p3">0</span>
+					<div class="change_rmb">
+						(约<b>￥</b><span class="rmb_value">0</span>)
+					</div>
+				</div>
+				<div class="total">
+					<i class="equal"></i>
+					<p>预计付款金额</p>
+					<b>$</b><span class="p4">0</span>
+					<div class="change_rmb">
+						(约<b>￥</b><span class="rmb_value">0</span>)
+					</div>
+				</div>
+			</div>
+			
+		</div>
 	</div>
-		
 	<div id="footer"></div>
 </body>
 </html>
