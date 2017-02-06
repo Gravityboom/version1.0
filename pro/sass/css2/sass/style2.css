@@ -1,0 +1,222 @@
+.middle_adv_container {
+  background: #f5eede;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.middle_adv {
+  margin: 0 auto;
+  width: 1180px;
+  height: 180px;
+}
+
+.banner2_container {
+  height: 783px;
+  background: url(../images/banner/2016040117210115131_7437141_1.jpg) no-repeat 50% 0;
+  width: 100%;
+}
+
+.banner2 {
+  margin: 0 auto;
+  width: 1180px;
+  padding-top: 37px;
+}
+
+.banner2_main {
+  padding-top: 19px;
+  position: relative;
+  z-index: 10;
+}
+
+.banner_pre {
+  display: none;
+}
+
+.pre_top, .next_top {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.banner2_main .pre_top dl, .next_top dl {
+  float: right;
+}
+
+.banner2_main .pre_top dl:first-child, .next_top dl:first-child {
+  float: left;
+}
+
+.pre_bottom, .next_bottom {
+  width: 1000px;
+}
+
+.pre_bottom, .next_bottom {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.banner2_main .pre_bottom div, .next_bottom div {
+  float: left;
+}
+
+.pre_bottom div:nth-child(n+2) {
+  margin-left: 20px;
+}
+
+.next_bottom div:nth-child(n+2) {
+  margin-left: 20px;
+}
+
+.pre_bottom div:nth-child(3) {
+  margin-left: 40px;
+}
+
+.next_bottom div:nth-child(3) {
+  margin-left: 40px;
+}
+
+.banner2_main > p {
+  padding-top: 25px;
+  text-align: center;
+}
+
+.banner2_main > p span {
+  font-size: 0px;
+  display: inline-block;
+  background: url(../images/banner/sp_paging.png) no-repeat;
+}
+
+.banner2_main > p .banner_on {
+  height: 12px;
+  width: 48px;
+}
+
+.banner2_main > p .banner_off {
+  height: 12px;
+  width: 20px;
+  background-position: 0 -22px;
+}
+
+.banner2_main > a {
+  display: none;
+  width: 38px;
+  height: 100px;
+  display: block;
+  background-image: url(../ico_images/sp_newlayout.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  margin-top: -76px;
+}
+
+.toRight {
+  background-position: -58px -133px;
+  right: 0;
+}
+
+.toLeft {
+  background-position: 0px -133px;
+  left: 0;
+}
+
+.banner2_main > ul > li > dl > a > div {
+  position: absolute;
+  padding-top: 45px;
+  padding-left: 15px;
+  height: 90px;
+  top: 226px;
+  width: 465px;
+  background: url(../ico_images/bg_stylenow.png) no-repeat;
+}
+
+.banner2_main > ul > li > dl > a > div > p {
+  margin-bottom: 10px;
+  height: 37px;
+  line-height: 37px;
+  color: #fff;
+  font-size: 28px;
+}
+
+.banner2_main > ul > li > dl > a > div > span {
+  height: 23px;
+  padding: 0 5px;
+  font-size: 16px;
+  line-height: 23px;
+  display: inline-block;
+  background-color: #ce4094;
+  color: #fff;
+}
+
+.box_shadow {
+  display: none;
+  text-align: center;
+  width: 230px;
+  height: 230px;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  color: #fff;
+}
+
+.box_shadow > dt {
+  text-align: left;
+}
+
+.box_shadow > dt span {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-color: #f22a2c;
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.box_shadow > dt span em {
+  font-size: 16px;
+}
+
+.box_shadow dd {
+  margin: 10px 0 5px 0;
+  font-size: 16px;
+}
+
+.box_shadow > p {
+  height: 18px;
+  font-size: 16px;
+}
+
+.box_shadow > span:nth-child(4) {
+  font-size: 24px;
+  color: #ff0200;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.box_shadow b, .box_shadow strong {
+  font-weight: 500;
+}
+
+.box_shadow > span:nth-child(5) {
+  font-size: 16px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.box_shadow > span:last-child {
+  display: block;
+  position: relative;
+  width: 190px;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 16px;
+  background-color: #f22a2c;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+}
+
+.box_shadow_hidden {
+  visibility: hidden;
+}
+
+/*# sourceMappingURL=style2.css.map */

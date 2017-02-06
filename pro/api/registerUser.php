@@ -5,8 +5,8 @@
         $conn=new mysqli("localhost","root","","usercenter");
         mysqli_query($conn,"set character set 'utf8'");//读库
         mysqli_query($conn,'set names utf8');//写库
-        $value="'".$_POST["user"]."','".$_POST["mobile"]."','".$_POST["mail"]."','".$_POST["secret"]."','".$_POST["name"]."'";
-        if($conn->query("insert into t_user (user,mobile,mail,secret,name) values (".$value.");")==true){
+        $value="'".$_POST["mobile"]."','".$_POST["user"]."','".$_POST["secret"]."'";
+        if($conn->query("insert into t_user (mobile,user,secret) values (".$value.");")==true){
             $success=1;
         }
         $conn->close();

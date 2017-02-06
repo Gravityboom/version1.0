@@ -5,12 +5,18 @@ $container_width:100%;
 }
 
 .middle_adv_container{
-
 	background:rgb(245, 238, 222);
 	width:$container_width;
 	margin-bottom:60px;
-
 }
+
+.middle_adv_container2{
+	margin-top:30px;
+	width:$container_width;
+	margin-bottom:60px;
+	background:rgb(208, 201, 193);
+}
+
 .middle_adv{
 	@include container_content;
 	height:180px;
@@ -68,11 +74,11 @@ $container_width:100%;
 	margin-left:40px;
 }
 .banner2_main>p{
-padding-top:25px;
+	padding-top:25px;
 	text-align:center;
 }
 .banner2_main>p span{
-font-size:0px;
+	font-size:0px;
 	display:inline-block;
 	background:url(../images/banner/sp_paging.png) no-repeat;
 }
@@ -106,3 +112,94 @@ font-size:0px;
 	left:0;
 }
 
+.banner2_main>ul>li>dl>a>div{
+	position:absolute;
+	padding-top:45px;
+	padding-left:15px;
+	height: 90px;
+	top:226px;
+	width:465px;
+	background:url(../ico_images/bg_stylenow.png) no-repeat;
+}
+.banner2_main>ul>li>dl:first-child>a>div{
+	
+}
+.banner2_main>ul>li>dl>a>div>p{
+	margin-bottom:10px;
+	height:37px;
+	line-height: 37px;
+	color:#fff;
+	font-size: 28px;
+}
+.banner2_main>ul>li>dl>a>div>span{
+	height: 23px;
+	padding: 0 5px;
+	font-size: 16px;
+	line-height: 23px;
+	display: inline-block;
+	background-color:#ce4094;
+	color:#fff;
+}
+.box_shadow{
+	display:none;
+	text-align:center;
+	width:230px;
+	height:230px;
+	background:rgba(0, 0, 0, 0.8);
+	position:absolute;
+	color:#fff;
+}
+.box_shadow>dt{
+	text-align:left;
+}
+.box_shadow>dt span{
+	display:inline-block;
+	width: 60px;
+    height: 60px;
+    background-color: #f22a2c;
+    font-size:20px;
+    line-height:60px;
+    text-align:center;
+}
+.box_shadow>dt span em{
+	font-size:16px;
+}
+.box_shadow dd{
+	margin:10px 0 5px 0;
+	font-size:16px;
+}
+.box_shadow>p{
+	height:18px;
+	font-size:16px;
+}
+.box_shadow>span:nth-child(4){
+	font-size:24px;
+	color:#ff0200;
+	margin-bottom:15px;
+	display:inline-block;
+}
+
+.box_shadow b,.box_shadow strong{
+	font-weight:500;
+}
+
+.box_shadow>span:nth-child(5){
+	font-size:16px;
+	display:inline-block;
+	margin-bottom:15px;
+}
+.box_shadow>a:last-child>span{
+	display: block;
+    position:relative;
+    width: 190px;
+    height: 40px;
+    margin: 0 auto;
+    font-size: 16px;
+    background-color: #f22a2c;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+}
+.box_shadow_hidden{
+	visibility:hidden;
+}

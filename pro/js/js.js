@@ -32,7 +32,7 @@ function advertisementTopStyle(){
 function banner2(){
 	var _index = 0;
 	var _banner = $(".banner2_main")[0];
-	_banner.timer = setInterval(move(_index),1000);
+	_banner.timer = setInterval(move,1000);
 
 	$(".banner2_main").mouseover(function() {
 		$(".banner2_main>a").css({"display":"block"});
@@ -41,21 +41,21 @@ function banner2(){
 
 	$(".banner2_main").mouseout(function() {
 		$(".banner2_main>a").css({"display":"none"});
-		_banner.timer = setInterval(move(_index),1000); 
+		_banner.timer = setInterval(move,1000); 
 	});
 
-	function move(index){
+	function move(){
 		
-		if(index>=2){index=0;}
-		if(index<0){index=1;}
+		if(_index>=2){_index=0;}
+		if(_index<0){_index=1;}
 		for(var j = 0 ;j < 2;j++){
 			/*所有ul隐藏*/
 			$(".banner2_main>ul")[j].style.display = "none";
 			$(".banner2_main>p span")[j].className = "banner_off";
 		}
-		$(".banner2_main>ul")[index].style.display = "block";
-		$(".banner2_main>p span")[index].className = "banner_on";
-		index++;
+		$(".banner2_main>ul")[_index].style.display = "block";
+		$(".banner2_main>p span")[_index].className = "banner_on";
+		_index++;
 	}
 
 	for(var n = 0; n < 2;n++){
@@ -70,16 +70,17 @@ function banner2(){
 		}
 		this.className = "banner_on";
 		_index = this.index;
-		move(_index);
+		move();
 	});
+
 
 	$(".toRight").click(function(){
 		console.log(_index);
-		move(_index);
+		move();
 	});
+
 	$(".toLeft").click(function(){
-		_index--;
-		console.log(_index);
+		_index-=2;
 		move();
 	});
 }
@@ -204,6 +205,7 @@ function scrollNav(){
 	console.log(1);
 }
 function eventHandle(){
+	var getmoreIndex = 0;
 	$("#close_adv")[0].onclick = closeAd;
 	$("#web_mark")[0].onclick = markWeb;
 	$("#street11")[0].onmouseover = showMystreet;
@@ -213,6 +215,13 @@ function eventHandle(){
 	$("#nav_btn")[0].onclick = openNav;
 	$("#nav_btn_close")[0].onclick = closeNav;
 	$("#nav_btn_close2")[0].onclick = closeNav;
+
+	$(".banner2_main>ul>li>div").mouseover(function(){
+		$(this).children("div.box_shadow")[0].style.display = "block";
+	});
+	$(".banner2_main>ul>li>div").mouseout(function(){
+		$(this).children("div.box_shadow")[0].style.display = "none";
+	});
 
 	$(".aside_category>li").mouseover(function(){
 		$(this).children(".category_detail")[0].style.display = "block";
@@ -264,7 +273,134 @@ function eventHandle(){
 	$("#return_top").click(function(){
 		$("body").animate({"scrollTop":0},800);
 	});
-}
+
+
+	$(".hot_sale_header>a").click(function(){
+		if(getmoreIndex==0){
+			$(this).css({
+				"background": 'url(ico_images/arrow6.png) no-repeat 149px -9px',
+			});
+			$(".hot_sale_header>ul").slideDown(300,function(){
+				getmoreIndex = 1;
+			});
+		}
+	});
+
+	$(".hot_sale_header>a").click(function(){
+		if(getmoreIndex==1){
+			$(this).css({
+				"background": 'url(ico_images/arrow6.png) no-repeat 149px 16px',
+			});
+			$(".hot_sale_header>ul").slideUp(300,function(){
+				getmoreIndex = 0;
+			});
+		}
+	});
+
+
+	for(var a=0;a<$(".scrolling_adv a").get().length;a++){
+		$(".scrolling_adv a").get()[a].style.left = a*190+"px";
+		$(".scrolling_adv_2 a").get()[a].style.left = a*190+"px";
+	}
+
+	$(".rolling_next").click(function(){
+		if($(".scrolling_adv")[0].offsetLeft%190==0){
+			$(".scrolling_adv").animate({
+				"left": $(".scrolling_adv")[0].offsetLeft+190+"px"},
+				100,function(){
+					if($(".scrolling_adv")[0].offsetLeft==4370){
+					$(".scrolling_adv").css({left:"-4370px"});
+					}
+					if($(".scrolling_adv")[0].offsetLeft==0){
+						$(".scrolling_adv_2").css({left:"-437px"});
+					}
+			});
+			$(".scrolling_adv_2").animate({
+				"left": $(".scrolling_adv_2")[0].offsetLeft+190+"px"},
+				100,function(){
+					if($(".scrolling_adv")[0].offsetLeft==0){
+					$(".scrolling_adv_2").css({left:"-4370px"});
+					}
+				});
+		}
+	});
+	$(".rolling_pre").click(function(){
+		if($(".scrolling_adv")[0].offsetLeft%190==0){
+			$(".scrolling_adv").animate({
+			"left": $(".scrolling_adv")[0].offsetLeft-190+"px"},
+			100,function(){
+				if($(".scrolling_adv")[0].offsetLeft==-3230){
+				$(".scrolling_adv_2").css({left:"1140px"});
+				}
+				if($(".scrolling_adv")[0].offsetLeft==-7600){
+					$(".scrolling_adv").css({left:"1140px"});
+				}
+			});
+
+			$(".scrolling_adv_2").animate({
+			"left": $(".scrolling_adv_2")[0].offsetLeft-190+"px"},
+			100,function(){
+				if($(".scrolling_adv")[0].offsetLeft==-3230){
+				$(".scrolling_adv_2").css({left:"1140px"});
+				}
+				if($(".scrolling_adv")[0].offsetLeft==-7600){
+					$(".scrolling_adv").css({left:"1140px"});
+				}
+			});
+		}
+	});
+
+	for(var a=0;a<$(".scrolling_adv_o a").get().length;a++){
+		$(".scrolling_adv_o a").get()[a].style.left = a*190+"px";
+		$(".scrolling_adv_2_o a").get()[a].style.left = a*190+"px";
+	}
+
+	$(".rolling_next_o").click(function(){
+		if($(".scrolling_adv_o")[0].offsetLeft%190==0){
+			$(".scrolling_adv_o").animate({
+				"left": $(".scrolling_adv_o")[0].offsetLeft+190+"px"},
+				100,function(){
+					if($(".scrolling_adv_o")[0].offsetLeft==4370){
+					$(".scrolling_adv_o").css({left:"-4370px"});
+					}
+					if($(".scrolling_adv_o")[0].offsetLeft==0){
+						$(".scrolling_adv_2_o").css({left:"-437px"});
+					}
+			});
+			$(".scrolling_adv_2_o").animate({
+				"left": $(".scrolling_adv_2_o")[0].offsetLeft+190+"px"},
+				100,function(){
+					if($(".scrolling_adv_o")[0].offsetLeft==0){
+					$(".scrolling_adv_2_o").css({left:"-4370px"});
+					}
+				});
+		}
+	});
+	$(".rolling_pre_o").click(function(){
+		if($(".scrolling_adv_o")[0].offsetLeft%190==0){
+			$(".scrolling_adv_o").animate({
+			"left": $(".scrolling_adv_o")[0].offsetLeft-190+"px"},
+			100,function(){
+				if($(".scrolling_adv_o")[0].offsetLeft==-3230){
+				$(".scrolling_adv_2_o").css({left:"1140px"});
+				}
+				if($(".scrolling_adv_o")[0].offsetLeft==-7600){
+					$(".scrolling_adv_o").css({left:"1140px"});
+				}
+			});
+
+			$(".scrolling_adv_2_o").animate({
+			"left": $(".scrolling_adv_2_o")[0].offsetLeft-190+"px"},
+			100,function(){
+				if($(".scrolling_adv_o")[0].offsetLeft==-3230){
+				$(".scrolling_adv_2_o").css({left:"1140px"});
+				}
+				if($(".scrolling_adv_o")[0].offsetLeft==-7600){
+					$(".scrolling_adv_o").css({left:"1140px"});
+				}
+			});
+		}
+	});}
 
 function initNavList(){
 	$.post("json/nav_list.json?flag="+Math.random()*100, null, function(data,textStatus) {
@@ -393,10 +529,78 @@ function initProductList(){
 	});
 }
 
+function menuchoose(){
+	$(".choose_menu_1 span").click(function(){
+		for(var n = 0;n<$(".choose_menu_1 span").length;n++){
+			$(".choose_menu_1 span")[n].className = null;
+			$(".list"+(n+1)).css({"display": "none"});
+		}
+		
+		$(this)[0].className = "choosed";
+		$(".list"+($(this).index()+1)).css({"display": "block"});
+	});
+
+	$(".choose_menu_2 span").click(function(){
+		for(var n = 0;n<$(".choose_menu_2 span").length;n++){
+			$(".choose_menu_2 span")[n].className = null;
+			$(".list2_"+(n+1)).css({"display": "none"});
+		}
+		$(this)[0].className = "choosed";
+		$(".list2_"+($(this).index()+1)).css({"display": "block"});
+	});
+
+	$(".galler").click(function(){
+		$(".product_list_1")[0].style.display = "none";
+		$(".product_list_2")[0].style.display = "block";
+		$(".galler").css({
+			"backgroundColor":"#484a57"
+		});
+		$(".galler span").css({
+			"width":"74px",
+			"height":"55px",
+			"marginTop":"9px",
+			"backgroundPosition":"0 -74px"
+		});
+		$(".ak").css({
+			"backgroundColor":"#f5f5f5"
+		});
+		$(".ak span").css({
+			"backgroundPosition":"0 -37px"
+		});
+	});
+	$(".ak").click(function(){
+		$(".product_list_1")[0].style.display = "block";
+		$(".product_list_2")[0].style.display = "none";
+		$(".galler").css({
+			"backgroundColor":"#f5f5f5"
+		});
+		$(".galler span").css({
+			"backgroundPosition":"0 -140px"
+		});
+		$(".ak").css({
+			"backgroundColor":"#484a57"
+		});
+		$(".ak span").css({
+			"backgroundPosition":"0 0"
+		});
+	});
+
+	for(var z=0;z<$(".trans>div dl").length;z++){
+		$(".trans>div dl dd").get()[z].style.backgroundPosition = -110*z+"px 0";
+	}
+	
+}
+function initFooter(){
+	$("#footer").load("footer.html",function(){
+		console.log("success");
+	});
+}
 $(function (){
 	eventHandle();
 	banner();
 	initNavList();
 	initProductList();
 	banner2();
+	menuchoose();
+	initFooter();
 });

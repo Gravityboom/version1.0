@@ -6,7 +6,6 @@
 #middle_nav{width:980px;}
 #nav_menu #nav_btn{width:163px;}
 #nav_menu #nav_btn:after{margin-left:43px}
-
 .login_container{
 	width:980px;
     min-height:650px;
@@ -16,7 +15,6 @@
 	overflow: hidden;
     position: relative;
     margin: 0px 0 30px;
-
     text-align: center;
     line-height: 0;
 }

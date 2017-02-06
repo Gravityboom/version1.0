@@ -12,7 +12,7 @@ function login(){
 				"user": _user,
 				"password": _password
 			};
-
+			
 			$.post("api/login.php",_params,function(data,textStatus){
 				try{
 					if(data=="0"){
@@ -28,7 +28,6 @@ function login(){
 	});
 }
 
-
 function errorTip(){
 	if(window.location.href.indexOf("user=")>0){
 		var _url = window.location.href.match(/user=/g)[0].replace(/user=/g,"");
@@ -37,8 +36,13 @@ function errorTip(){
 		$(".error_tip_content")[0].innerHTML = "账号或密码输入错误";
 	}
 }
-
+function initFooter(){
+    $("#footer").load("footer.html",function(){
+        console.log("success");
+    });
+}
 $(function (){
 	login();
 	errorTip();
+    initFooter();
 });
