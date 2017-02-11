@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/shoppingcar.css">
+	<link rel="stylesheet" href="css/footer2.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/head.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/shoppingcar.js"></script>
+</head>
+<body>
+		<!-- 顶部导航开始 -->
+	<nav id="top_nav_container">
+		<div id="top_nav">
+			<ul id="top_nav_left">
+				<li><span>欢迎来到11街道</span></li>
+				<li id="web_mark">收藏网页<span>★</span></li>
+			</ul>
+
+			<ul id="top_nav_right">
+				<li><a href="login.html">登录</a></li>
+				<li><a href="register.html">注册会员</a></li>
+            	<li><a href="shoppingcar.html">购物车</a><em>0</em></li>
+				<li id="street11">
+					<a href="#" id="mystreet">我的11街</a>
+					<div id="my11street">
+						<ul>
+							<li><a href="">订单/配送查询</a></li>
+							<li><a href="">关注商品</a></li>
+							<li><a href="">优惠券</a> <span>|</span> <a href="#">积分</a></li>
+							<li><a href="">会员信息</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#">客服中心</a></li>
+				<li id="language_container">
+					<a href="#" id="language"><span></span>中文</a>
+					<div id="language_menu">
+						<ul>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Korea
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Global
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Malaysia
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Indonesia
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Turkey
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- 顶部导航结束 -->
+
+	<!-- search部分开始 -->
+	<nav class="middle_nav_container">
+		<div id="middle_nav">
+			<h1 ><a href="#"><img src="ico_images/logo_v2.png" alt=""></a></h1>
+			<div class="search">
+				<div class="search_inner">
+					<input id="search_text" type="text">
+					<button id="search_button"></button>
+				</div>
+				<div class="hot_word">
+					<ul>
+						<li><a href="javascript:void(0)">niBBuns</a></li>
+						<li><a href="javascript:void(0)">CHERRYKOKO</a></li>
+						<li><a href="javascript:void(0)">FENDI</a></li>
+						<li><a href="javascript:void(0)">好利卡好利卡</a></li>
+						<li><a href="javascript:void(0)">etudehouse</a></li>
+						<li><a href="javascript:void(0)">芭妮兰banila co</a></li>
+						<li><a href="javascript:void(0)">鬼怪</a></li>
+						<li><a href="javascript:void(0)">阿迪达斯</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="search_right">
+				<a href="#"><img src="images/2016050911060950939_7437155_1.png" alt=""></a>
+			</div>
+		</div>
+	</nav>
+	<!-- search部分结束 -->
+
+	<!-- 导航部分开始 -->
+	<nav class="nav_main_container">
+		<div id="nav_main">
+			<div id="nav_menu">
+				<div>
+					<a href="11street.html" class="home_web">首页</a>
+					<button id="nav_btn">全部分类</button>
+					<div id="nav_list">
+						<div class="nav_list_title">
+							<button id="nav_btn_close">全部分类</button>
+						</div>
+						<div class="nav_list_body">
+						</div>
+						<button id="nav_btn_close2"></button>
+					</div>
+
+				</div>
+
+				<ul class="nav_category">
+					<li><a href="javascript:void(0)">领券/活动</a></li>
+					<li><a href="javascript:void(0)">聚惠街</a></li>
+					<li><a href="javascript:void(0)">值得淘</a></li>
+					<li><a href="javascript:void(0)">99好货珍藏</a></li>
+					<li><a href="javascript:void(0)">韩风时尚</a></li>
+				</ul>
+				<a href="#" class="nav_cart">
+					<em>0</em>
+				</a>
+			</div>
+		</div>
+	</nav>
+	<!-- 导航部分结束 -->
+
+	<!-- 购物车标题部分 -->	
+	<div class="car_container" ng-controller="cartCtrl">
+		<div class="shopcar_tit clear">
+			<span class="shocar_ico"></span><h2>购物车</h2>
+			<ol>
+				<li class="first_li"><span class="step1"></span>购物车</li>
+				<li><span class="step2"></span>订单/付款</li>
+				<li><span class="step3"></span>订购完成</li>
+			</ol>
+		</div>
+		<div class="shop_list"><h3>购物清单(<span class="amount_num">2</span>个)</h3></div>
+		<table>
+			<caption>购物清单</caption>
+			<colgroup>
+				<col style="width:5px">
+				<col style="width:11%">
+				<col>
+				<col style="width:8%">
+				<col style="width:18%">
+				<col style="width:18%">
+				<col style="width:12%">
+			</colgroup>
+			<thead>
+				<tr class="shopcar_main_tit">
+					<th><input class="check_all" ng-model="checkAllValue" ng-click="checkAll()" type="checkbox"></th>
+					<th colspan="2">商品/选项详情</th>
+					<th>数量</th>		
+					<th>商品价格</th>
+					<th>优惠价</th>
+					<th>订单</th>
+				</tr>
+			</thead>
+				<tr class="shop_product_list shop_product_list_1 " ng-repeat="key in cartList">
+					<th><input class="c11 check_it" ng-click="checkIt()" ng-model="key.check"  type="checkbox" /></th>
+					<th class="shop_car_img">
+						<a href="#">
+							<img ng-src="cartImg/{{key.src}}" alt="">
+						</a>
+					</th>
+					<th class="shop_car_detail">
+						<a href="#">{{key.name}}</a>
+						<button>修改选项</button>
+						<li>{{key.description}}</li>
+					</th>	
+					<th class="count">
+						<span class="operate" ng-click="countNum(0,$index)">-</span>
+						<input type="text" ng-model="quantityArr[$index]">
+						<span class="operate" ng-click="countNum(1,$index)">+</span>
+						<button>修改</button>
+					</th>
+					<th class="price">
+						<strong><b>$</b>{{key.dollar}}</strong>
+					</th>
+					<th class="price_infact">
+						 <strong><b>$</b>{{key.dollar}}</strong>
+						 <p>(约<b> ¥ </b><span>{{key.rmbPrice}}</span>)</p>
+					</th>
+					<th class="tobuy">
+						<a href="#">购买</a>
+						<button>删除</button>
+					</th>
+				</tr>
+		</table>
+		<div class="fun_btn">
+			<input type="checkbox" ng-model="checkAllValue" ng-click="checkAll()" class="check_all">
+			<span>选择商品</span>
+			<button class="delete_all control_all">删除</button>
+			<button class="control_all">收藏</button>
+		</div>
+		<div class="total_box">
+			<div class="set_amount">
+				<div class="origin">
+					<p>订单金额</p>
+					<b>$</b><span class="p1">{{dollarPrice}}</span>
+					<div class="change_rmb">
+						(约<b>￥</b><span class="rmb_value">{{rmbPrice}}</span>)
+					</div>
+				</div>
+				<div class="cost">
+					<i class="plus"></i>
+					<p>运费</p>
+					<b>$</b><span class="p2">0</span>
+					<div class="change_rmb">
+						(约<b>￥</b><span class="rmb_value">0</span>)
+					</div>
+				</div>
+				<div class="cut">
+					<i class="reduce"></i>
+					<p>优惠金额</p>
+					<b>$</b><span class="p3">0</span>
+					<div class="change_rmb">
+						(约<b>￥</b><span class="rmb_value">0</span>)
+					</div>
+				</div>
+				<div class="total">
+					<i class="equal"></i>
+					<p>预计付款金额</p>
+					<b>$</b><span class="p4">{{dollarPrice}}</span>
+					<div class="change_rmb">
+						(约<b>￥</b><span class="rmb_value">{{rmbPrice}}</span>)
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer"></div>
+</body>
+</html>

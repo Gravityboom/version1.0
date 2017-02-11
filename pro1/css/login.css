@@ -1,0 +1,226 @@
+#nav_main{width:980px;}
+#top_nav{width:980px;}
+#middle_nav #search_text{width:521px;}
+#middle_nav .search{width:581px;}
+#middle_nav .search .search_inner{width:581px}
+#middle_nav{width:980px;}
+#nav_menu #nav_btn{width:163px;}
+#nav_menu #nav_btn:after{margin-left:43px}
+.login_container{
+	width:980px;
+    min-height:650px;
+    margin: 40px auto 0 auto;
+}
+#contents .title{
+	overflow: hidden;
+    position: relative;
+    margin: 0px 0 30px;
+    text-align: center;
+    line-height: 0;
+}
+#contents .title h1{
+	padding:0 10px;
+	display:inline-block;
+}
+
+#contents .title h1 span{
+	font-size: 0;
+	width:141px;
+	height:34px;
+	display:block;
+	background:url(../ico_images/tit_h2.png) no-repeat 0 -120px;
+}
+
+
+#contents .title h1:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    width: 400px;
+    height: 1px;
+    margin-top:1px;
+    background-color: #434343;
+}
+#contents .title:before{
+	position: absolute;
+	top: 50%;
+	width:3px;
+	height:3px;
+	display:block;
+	content:"";
+	border-radius:50%;
+	border:1px solid #434343;
+	background-color:#fff;
+	margin-top:-1px;
+}
+#contents .title h1:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right:2px;
+    width: 400px;
+    height: 1px;
+    margin-top:1px;
+    background-color: #434343;
+}
+#contents .title:after{
+	position: absolute;
+	top: 50%;
+	width:3px;
+	height:3px;
+	right:0;
+	display:block;
+	content:"";
+	border-radius:50%;
+	border:1px solid #434343;
+	background-color:#fff;
+	margin-top:-1px;
+}
+
+.login_left,.login_right{
+	width: 488px;
+    height: 440px;
+    border: 1px solid #e5e5e5;
+    background: #f9f9f9;
+    float:left;
+}
+.login_left{
+	border-right:none;
+}
+.login_left h3{
+	width: 328px;
+    margin: 26px auto 5px auto;
+    font-size: 22px;
+}
+.login_left fieldset{
+	width: 328px;
+    margin: 0 auto;
+}
+.error_tip{
+    height:27px;
+    display:none;
+    color:#f22a2c;
+}
+.error_tip .error_icon{
+    width:12px;
+    height:12px;
+    display:inline-block;
+    margin-top:2px;
+    margin-right:4px;
+    float:left;
+    background:url(../ico_images/sp1.png) no-repeat -10px 0;
+}
+
+.login_left fieldset em{
+	display:block;
+	margin: 7px 0 3px 0;
+    font-size: 14px;
+    color: #424242;
+    font-style:normal;
+}
+.login_left fieldset>input{
+	width: 331px;
+	padding: 10px 10px 9px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+.login_left fieldset>div.check{
+	margin-top: 7px;
+	font-size: 13px;
+}
+
+.login_left fieldset div>input{
+	width: 17px;
+    height: 17px;
+    margin-right: 6px;
+    vertical-align: middle;
+    margin-top:-2px
+}
+.login_left fieldset div.check>a{
+	float:right;
+	border-bottom:1px solid #657bf3;
+	color:#657bf3;
+	font-weight:700;
+}
+.btn1_container{
+	padding: 8px 0 19px;
+    border-bottom: 1px solid #e5e5e5;
+}
+#submit{
+	width: 122px;
+	height: 41px;
+    display: inline-block;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid #e02323;
+    border-bottom: 1px solid #a41a1a;
+    background: #f22a2b;
+    color: #fff;
+    line-height: 41px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor:pointer;
+}
+.other_way{
+	font-size: 13px;
+	padding-top: 10px;
+}
+.login1,.login2{
+	display:inline-block;
+	height:38px;
+	padding-left:47px;
+	margin-top:10px;
+	float:left;
+	background:url(../ico_images/sns.png) no-repeat;
+}
+
+.login2{
+	margin-left:10px;
+	background-position: 0 -38px;
+}
+
+.login1 span,.login2 span{
+	padding:0 10px;
+	color:#fff;
+	display:block;
+	font:bold 13px/38px "微软雅黑";
+}
+.login_right{
+	text-align:center;
+}
+
+.login_right>h3{
+	margin: 35px 0 1px;
+    font-size: 18px;
+    color: #212121;
+}
+.login_right>p{
+	padding-top: 5px;
+    font-size: 13px;
+}
+.btn2_container{
+	margin-top: 25px;
+}
+.btn2_container a{
+	border-radius: 2px;
+    border: 1px solid #4d63dc;
+    border-top-color: #4f66e3;
+    border-bottom-color: #3a4ba6;
+    background: #657bf3;
+    display:inline-block;
+    height:41px;
+    width:122px;
+    line-height: 41px;
+    font-size: 15px;
+    font-weight: bold;
+    color:#fff;
+}
+.ad{
+	width: 340px;
+    margin: 30px auto 0 auto;
+    padding: 30px 0 0 0;
+    border-top: 1px solid #ddd;
+}

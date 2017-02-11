@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>detail</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/detail.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/head.js"></script>
+	<script src="js/detail.js"></script>
+</head>
+<body>
+	<!--顶部导航-->
+	<nav id="top_nav_container">
+		<div id="top_nav">
+			<ul id="top_nav_left">
+				<li><span>欢迎来到11街</span></li>
+				<li id="web_mark">收藏网页<span>★</span></li>
+			</ul>
+
+			<ul id="top_nav_right">
+				<li><a href="login.html">登录</a></li>
+				<li><a href="register.html">注册会员</a></li>
+            	<li><a href="shoppingcar.html">购物车</a><em>0</em></li>
+				<li id="street11">
+					<a href="#" id="mystreet">我的11街</a>
+					<div id="my11street">
+						<ul>
+							<li><a href="">订单/配送查询</a></li>
+							<li><a href="">关注商品</a></li>
+							<li><a href="">优惠券</a> <span>|</span> <a href="#">积分</a></li>
+							<li><a href="">会员信息</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#">客服中心</a></li>
+				<li id="language_container">
+					<a href="#" id="language"><span></span>中文</a>
+					<div id="language_menu">
+						<ul>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Korea
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Global
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Malaysia
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Indonesia
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Turkey
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- 顶部导航结束 -->
+
+	<!-- search开始 -->
+	<nav class="middle_nav_container">
+		<div id="middle_nav">
+			<h1 ><a href="#"><img src="ico_images/logo_v2.png" alt=""></a></h1>
+			<div class="search">
+				<div class="search_inner">
+					<input id="search_text" type="text" title="search_it">
+					<button id="search_button"></button>
+				</div>
+				<div class="hot_word">
+					<ul>
+						<li><a href="javascript:void(0)">niBBuns</a></li>
+						<li><a href="javascript:void(0)">CHERRYKOKO</a></li>
+						<li><a href="javascript:void(0)">FENDI</a></li>
+						<li><a href="javascript:void(0)">阿迪达斯</a></li>
+						<li><a href="javascript:void(0)">etudehouse</a></li>
+						<li><a href="javascript:void(0)">芭妮兰banila co</a></li>
+						<li><a href="javascript:void(0)">鬼怪</a></li>
+						<li><a href="javascript:void(0)">好利卡好利卡</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="search_right">
+				<a href="#"><img src="images/2016050911060950939_7437155_1.png" alt=""></a>
+			</div>
+		</div>
+	</nav>
+	<!-- search结束 -->
+
+	<!-- 全部分类 -->
+	<nav class="nav_main_container">
+		<div id="nav_main">
+			<div id="nav_menu">
+				<div>
+					<a href="11street.html" class="home_web">首页</a>
+					<button id="nav_btn">全部分类</button>
+					<div id="nav_list">
+						<div class="nav_list_title">
+							<button id="nav_btn_close">全部分类</button>
+						</div>
+						<div class="nav_list_body">
+						</div>
+						<button id="nav_btn_close2"></button>
+					</div>
+
+				</div>
+
+				<ul class="nav_category">
+					<li><a href="javascript:void(0)">品牌荟</a></li>
+					<li><a href="javascript:void(0)">领券</a></li>
+					<li><a href="javascript:void(0)">值得淘</a></li>
+					<li><a href="javascript:void(0)">剁手街</a></li>
+					<li><a href="javascript:void(0)">99好货珍藏</a></li>
+					<li><a href="javascript:void(0)">流行GO&gt;</a></li>
+				</ul>
+				<a href="#" class="nav_cart">
+					<em>0</em>
+				</a>
+			</div>
+		</div>
+	</nav>
+	<!-- 全部分类结束 -->
+
+	<div class="detail_nav_container">
+		<nav class="detail_nav">
+			<a href="#">服装鞋包</a>
+			<div>
+				<a href="javascript:void(0)">运动时尚</a>
+				<ul class="btn_nav_hidden">
+					<li><a href="#">女装</a></li>
+					<li><a href="#">箱包/鞋类/配饰</a></li>
+					<li><a href="#">男装</a></li>
+					<li><a href="#">墨镜/眼镜</a></li>
+					<li><a href="#">运动时尚</a></li>
+					<li><a href="#">百货商店</a></li>
+					<li><a href="#">11街 X Designer</a></li>
+				</ul>
+			</div>
+			<div>
+				<a href="javascript:void(0)">男士运动装</a>
+				<ul class="btn_nav_hidden">
+					<li><a href="#">男士运动装</a></li>
+					<li><a href="#">女士运动装</a></li>
+					<li><a href="#">男女共用运动装</a></li>
+					<li><a href="#">运动鞋</a></li>
+					<li><a href="#">运动配饰</a></li>
+					<li><a href="#">登山鞋/功能鞋</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div class="wrap">
+		<section class="clear">
+			<div class="title"><h2>[Lock & Lock] kitty 保温瓶大集合/水杯</h2></div>
+			<div class="product_show_img clear">
+				<img src="images/1666702134_B.jpg" alt="">
+				<div class="product_show_small">
+					<span><img src="images/1666702134_B.jpg" alt=""></span>
+					<span><img src="images/1666702134_A1.jpg" alt=""></span>
+					<span><img src="images/1666702134_A2.jpg" alt=""></span>
+				</div>
+				<div class="product_show_bottom">
+					<a href="#"><img src="" alt=""></a>
+					<a href="#"><img src="" alt=""></a>
+					<span></span>
+				</div>
+			</div>
+			<div class="product_introduction">
+				<div class="product_price">
+					<p class="pp1"><b>$</b><s>9.45</s></p>
+					<p class="pp2"><b>$</b><s>8.58</s><span>(约<strong>¥</strong>58.77)</span></p>
+					<span><strong>9.0</strong>折</span>
+				</div>
+				<div class="price_tip">
+					<div class="price_tip_box">
+						<header class="clear">
+							<span class="sss1">本商品可能需缴纳行邮税。</span>
+							<span class="sss2"><a href="#">预计各类商品行邮税率说明<i></i></a></span>
+						</header>
+						<div class="price_box_body">
+							<p class="tro1">主要行邮税率</p>
+							<ul class="clear">
+								<li>1.婴幼儿童/食品:15%</li>
+								<li>2.服饰类:30%</li>
+								<li>3.电子产品类:15%或者30%</li>
+								<li>4.护肤品类:30%</li>
+								<li>5.彩妆:60%</li>
+							</ul>
+							<p>根据国家/地区不同，可能无关税 。(香港)</p>
+						</div>
+					</div>
+					<div class="size_reference">
+						<a href="#">尺寸参考表<i></i></a>
+					</div>
+					<div class="select_option">
+						<p class="txt1 clear"><span class="txt1_1">必选项</span><span class="txt1_2">购买此商品的必选项。</span></p>
+						<div class="select_option_1 clear">
+							<span class="select_tit">选项名1</span>
+							<div class="select_container">
+								<select name="" id="">
+									<option value="" selected>请选择</option>
+									<option value="">00.闪亮水杯/option>
+									<option value="">01.Kitty水杯(LKT387S)</option>
+									<option value="">02.Mime水杯(LHC133)</option>
+									<option value="">03.可爱水杯</option>
+									<option value="">04.秘密水杯(LHC143)</option>
+									<option value="">05.彩色扣子水杯(LHC3201B)</option>
+									<option value="">06.简洁一键式水杯(LHC3206)</option>
+									<option value="">07.水杯保温瓶</option>
+								</select>
+							</div>
+						</div>
+						<div class="select_option_2 clear">
+							<span class="select_tit">选项名2</span>
+							<div class="select_container">
+								<select name="" id="">
+									<option value="" selected>请选择</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="amount_option"></div>
+					<div class="dividing_line">
+						<div class="part_1 clear">
+							<span class="part_1_tit">商品总价<strong>(数量)</strong></span>
+							<span class="part_1_price">
+								<strong>$<b class="dollar">21.21</b></strong>
+								<span class="rmb">(约¥224.40)</span>
+								<span class="count">(2件)</span>
+							</span>
+						</div>
+						<div class="part_2 clear">
+							<span class="part_2_tit">预计运费<a href="#"></a></span>
+							<span class="part_2_price">
+								<strong>$<b class="dollar">9.50</b></strong>
+								<span class="rmb">(约¥65.07)</span>
+							</span>
+						</div>
+						<div class="part_3 clear">
+							<span class="part_3_tit">税费</span>
+							<span class="part_3_price">
+								<p>行邮税由买家负担。</p>
+							</span>
+						</div>
+						<div class="part_4 clear">
+							<span class="part_4_tit">订单总计</span>
+							<span class="part_4_price">
+								<strong>$<b class="dollar">42.26</b></strong>
+								<span class="rmb">(约 ¥ 289.48)</span>
+							</span>
+						</div>
+					</div>
+					<div class="btns">
+						<a href="javascript:void(0)" class = "buy">立即购买</a>						
+						<a href="javascript:void(0)" class = "into_cart">放入购物车</a>						
+						<a href="javascript:void(0)" class = "focus">关注商品</a>						
+					</div>
+				</div>
+			</div>
+		</section>
+		<div class="gap_adv">
+			<a href="#"><img src="images/2016122814052821348_9827118_1.jpg" alt=""></a>
+		</div>
+		<ul id="floor_1" class="floor_btn floor_btn_1">
+			<li class="floor_1"><a href="#floor_1">商品详情</a></li>
+			<li class="floor_2"><a href="#floor_2">商品评价 (0) / 购物短评 (0)</a></li>
+			<li class="floor_3"><a href="#floor_3">卖家/退货/换货信息</a></li>
+		</ul>
+		<div class="img_introduction">
+			<img src="images/1666702134_0x0_cn.jpg" alt="">
+			<img src="images/1666702134_0x1_cn.jpg" alt="">
+			<img src="images/1666702134_0x2_cn.jpg" alt="">
+			<img src="images/1666702134_0x3_cn.jpg" alt="">
+			<img src="images/1666702134_0x4_cn.jpg" alt="">
+			<img src="images/1666702134_0x5_cn.jpg" alt="">
+			<img src="images/1666702134_0x6_cn.jpg" alt="">
+			<img src="images/1666702134_0x7_cn.jpg" alt="">
+			<img src="images/1666702134_0x8_cn.jpg" alt="">
+			<img src="images/1666702134_0x9_cn.jpg" alt="">
+			<img src="images/1666702134_0x10_cn.jpg" alt="">
+			<img src="images/1666702134_0x11_cn.jpg" alt="">
+			<img src="images/1666702134_0x12_cn.jpg" alt="">
+			<img src="images/1666702134_0x13_cn.jpg" alt="">
+			<img src="images/1666702134_0x14_cn.jpg" alt="">
+			<img src="images/1666702134_0x15_cn.jpg" alt="">
+			<img src="images/1666702134_0x16_cn.jpg" alt="">
+			<img src="images/1666702134_0x17_cn.jpg" alt="">
+			<img src="images/1666702134_0x18_cn.jpg" alt="">
+			<img src="images/1666702134_0x19_cn.jpg" alt="">
+			<img src="images/1666702134_0x20_cn.jpg" alt="">
+			<img src="images/1666702134_0x21_cn.jpg" alt="">
+			<img src="images/1666702134_0x22_cn.jpg" alt="">
+			<img src="images/1666702134_0x23_cn.jpg" alt="">
+			<img src="images/1666702134_0x24_cn.jpg" alt="">
+			<img src="images/1666702134_0x25_cn.jpg" alt="">
+			<img src="images/1666702134_0x26_cn.jpg" alt="">
+			<img src="images/1666702134_0x27_cn.jpg" alt="">
+			<img src="images/1666702134_0x28_cn.jpg" alt="">
+			<img src="images/1666702134_0x29_cn.jpg" alt="">
+			<img src="images/1666702134_0x30_cn.jpg" alt="">
+			<img src="images/1666702134_0x31_cn.jpg" alt="">
+			<img src="images/1666702134_0x32_cn.jpg" alt="">
+			<img src="images/1666702134_0x33_cn.jpg" alt="">
+			<img src="images/1666702134_0x34_cn.jpg" alt="">
+			<img src="images/1666702134_0x35_cn.jpg" alt="">
+			<img src="images/1666702134_0x36_cn.jpg" alt="">
+			<img src="images/1666702134_0x37_cn.jpg" alt="">
+			<img src="images/1666702134_0x38_cn.jpg" alt="">
+			<img src="images/1666702134_0x39_cn.jpg" alt="">
+			<img src="images/1666702134_0x40_cn.jpg" alt="">
+			<img src="images/1666702134_0x41_cn.jpg" alt="">
+			<img src="images/1666702134_0x42_cn.jpg" alt="">
+			<img src="images/1666702134_0x43_cn.jpg" alt="">
+			<img src="images/1666702134_0x44_cn.jpg" alt="">
+			<img src="images/1666702134_0x45_cn.jpg" alt="">
+			<img src="images/1666702134_0x46_cn.jpg" alt="">
+			<img src="images/1666702134_0x47_cn.jpg" alt="">
+			<img src="images/1666702134_0x48_cn.jpg" alt="">
+			<img src="images/1666702134_0x49_cn.jpg" alt="">
+			<img src="images/1666702134_0x50_cn.jpg" alt="">
+			<img src="images/1666702134_0x51_cn.jpg" alt="">
+			<img src="images/1666702134_0x52_cn.jpg" alt="">
+			<img src="images/1666702134_0x53_cn.jpg" alt="">
+		</div>
+		<div class="">
+			<div class="notice_detail">
+				<img src="ico_images/logo_11st.png" alt="">
+				<p>韩国品牌正品及<span>SOHO</span>独立设计师品牌海淘网站<span>11</span>街</p>
+			</div>
+			<div class="notice_detail_2">
+				<p><span>11</span>街购物网站由韩国<span>SK Planet</span>公司运营。韩国三大集团之一的<span>SK</span>集团国际事业已覆盖中国、泰国、马拉西亚、印尼及土耳其等国家，在领域取得了卓越成果。</p>
+				<ul class="clear">
+					<li>
+						<p>SK Planet 韩国总部大楼及11街网站员工</p>
+						<div>
+							<img src="images/img_de_1.jpg" alt="">
+							<img src="images/img_de_2.jpg" alt="">
+						</div>			
+					</li>
+					<li>
+						<p>SK集团中国北京总部大楼</p>
+						<div class="img_de_3">
+							<img src="images/img_de_3.jpg" alt="">
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="notice_detail_3">
+				<div class="set_into clear">
+					<p class="set_into_tit"><span>11</span>街的商品选定形式</p>
+					<p class="set_into_content">位于韩国总部的11街韩文网在众多进驻的卖家中，严格筛选出“顾客满意度高”、<br />“销售业绩优秀”、“可提供正品认证”的卖家，并从中选取希望进驻11街中文网 的卖家，<br />对其进行正品鉴定查询、授权书查询及正规进出口证明检查后，由11街中文网 商品团队进行管理。</p>
+					<div class="content_left">
+						<p><span>11</span>街韩文网</p>
+						<img src="images/img_site_1.jpg" alt="">
+						<a href="http://11st.co.kr">http://11st.co.kr</a>
+					</div>
+					<div class="content_middle">
+						<img src="images/img_site_2.jpg" alt="">
+					</div>
+					<div>
+						<p><span>11</span>街中文网</p>
+						<img src="images/img_site_3.jpg" alt="">
+						<a href="http://11st.co.kr">http://www.11street.com.cn</a>
+					</div>
+				</div>
+			</div>
+			<div class="trans_img clear">
+				<p class="trans_img_tit">商品配送流程图</p>
+				<div class="clear">
+					<div class="ico_arrow1">
+						<img src="images/img_flow_1.jpg" alt="">
+						<p><span>1</span>国际配送商品</p>
+					</div>
+					<div class="ico_arrow1">
+						<img src="images/img_flow_2.jpg" alt="">
+						<p><span>2</span>在11街的物流仓库合箱包装后<br />准备开始国际配送</p>
+					</div>
+					<div>
+						<img src="images/img_flow_3.jpg" alt="">
+						<p><span>3</span>航空运送直邮到中国境内</p>
+						<br /><br />
+					</div>
+					<div class="ico_arrow2">
+						<img src="images/img_flow_6.jpg" alt="">
+						<p><span>6</span>我的11街 > 订单 ><br />商品评价（购物短评）<br />填写后，获得相应积分奖励，<br />下次购物时可以使用</p>
+					</div>
+					<div class="ico_arrow2">
+						<img src="images/img_flow_5.jpg" alt="">
+						<p><span>5</span>买家收货</p>
+					</div>
+					<div>
+						<img src="images/img_flow_4.jpg" alt="">
+						<p><span>4</span>在中国海关进行通关流程</p>
+					</div>
+				</div>
+			</div>
+			<div class="answer_question">
+				<p class="answer_question_tit">常见问答</p>
+				<div class="answer_question_box">
+					<ul>
+						<li>
+							<p class="question"><span>Q</span>.在11街购买的商品，全部都从韩国发货吗?</p>
+							<p class="answer">
+								11街中文网所售的全部商品全部来自11街韩文网，全部都从韩国发货。<br />
+								选取11街韩文网中销量最高评价最好的卖家，进行严格的正品认证监管，<br />
+								保证您买到的每件商品都是最棒的真货。<br />
+								所有商品都是从韩国产地直接发往中国的直销品。
+							</p>
+						</li>
+						<li>
+							<p class="question"><span>Q</span>.想知道配送中商品到哪了。</p>
+							<p class="answer">
+								“我的11街 > 我的购物详情” <br />
+								页面查询。订单状态中[配送查询]以显示实时的配送状态和包裹位置。<br />
+								(https://www.11street.com.cn/order/OrderList.do?ver=02&isSSL=Y&CHOICEMENU=A01#)
+							</p>
+						</li>
+						<li>
+							<p class="question"><span>Q</span>.什么是确认收货?</p>
+							<p class="answer">
+								确认收货就是已完成商品收领。<br />
+								顾客收到商品确认无误后，可在“我的11街>订单/配送查询”页面完成收货确认后，<br />
+								可领取积分。如果配送完成后顾客本人没有主动点击确认收货，<br />
+								一段时间后系统会自动确认收货。自动确认收货的情况没有积分。<br />
+								* 如您没有收到商品但系统自动确认收货，请联系客服中心。
+							</p>
+						</li>
+						<li>
+							<p class="question"><span>Q</span>.订购时如何使用积分和优惠券呢?</p>
+							<p class="answer">
+								优惠券: 填写订购信息时，请在[优惠信息]优惠券中选择 [可以使用的优惠券]。<br />
+								积分: 填写订购信息时，请在[使用积分]填写需要使用的积分。
+							</p>
+						</li>
+						<li>
+							<p class="question"><span>Q</span>.商品信息是韩文看不懂怎么办?</p>
+							<p class="answer">
+								给您带来的不便深表歉意，请记下商品编号并咨询客服中心。<br />
+								客服中心可以通过QQ或者邮件咨询。<br />
+								邮件咨询 : http://www.11street.com.cn/helpdesk/Qna/goHelpMailSendForm.do
+							</p>
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<ul id="floor_2" class="floor_btn floor_btn_2">
+			<li class="floor_1"><a href="#floor_1">商品详情</a></li>
+			<li class="floor_2"><a href="#floor_2">商品评价 (0) / 购物短评 (0)</a></li>
+			<li class="floor_3"><a href="#floor_3">卖家/退货/换货信息</a></li>
+		</ul>
+		<ul id="floor_3" class="floor_btn floor_btn_3">
+			<li class="floor_1"><a href="#floor_1">商品详情</a></li>
+			<li class="floor_2"><a href="#floor_2">商品评价 (0) / 购物短评 (0)</a></li>
+			<li class="floor_3"><a href="#floor_3">卖家/退货/换货信息</a></li>
+		</ul>
+	</div>
+
+	<!-- 导入脚部 -->
+	<div id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+	<style>
+		a{
+			width:100px;
+			height:30px;
+			display:inline-block;
+			border-radius:10px;
+			line-height:30px;
+			font-size:16px;
+		}
+	</style>
+</head>
+<body ng-app="App" ng-controller="request">
+	<div>
+		<img src="cartImg/1.jpg" alt="">
+		<a class="" href="javascript:void(0)" ng-click="initEvent()">加入购物车</a>
+	</div>
+	<div>
+		<img src="cartImg/2.jpg" alt="">
+		<a class="" href="javascript:void(0)" ng-click="initEvent()">加入购物车</a>
+	</div>
+	<div>
+		<img src="cartImg/3.jpg" alt="">
+		<a class="" href="javascript:void(0)" ng-click="initEvent()">加入购物车</a>
+	</div>
+</body>
+<script src="js/angular.min.js"></script>
+<script type="text/javascript">
+	var app = angular.module("App",[]);
+	app.controller("request",function($scope,$http){
+		$http.post("demo.json",null).then(function(data,status,headers,config){
+			var _a = document.getElementsByTagName("a");
+			for(var i=0; i<_a.length;i++){
+				_a[i].className = i;
+				_a[i].onclick =function(){
+					console.log(data.data[this.className]["id"]);
+					document.cookie = "production"+this.className+"={id:"+data.data[this.className]["id"]+",num:1}";
+					var _confirm = confirm("已添加购物车，是否跳转至购物车？");
+					if(_confirm==true){
+						window.location.href ="shoppingcar.html";
+					}
+				}
+			}
+		}).catch(function(data,status,headers,config){
+			console.log("error");
+		});
+	});
+
+</script>
+</html>

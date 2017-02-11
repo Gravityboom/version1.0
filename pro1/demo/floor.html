@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>floor</title>
+	<link rel="stylesheet" href="common.css">
+	<style>
+		.floor{width:100%;height:2000px;text-align:center;font-size:50px;font-family:"微软雅黑";}
+		#floor0{background:#ccc;}
+		#floor1{background-color: #56a7ff;}
+		#floor2{background-color: #4a49ff;}
+		#floor3{background-color: #9451ff;}
+		#floor4{background-color: #ed50ff;}
+		#floor5{background-color: #ff4765;}
+
+		#aside{font-size:15px;color:#fff;font-weight:700;width:40px;padding:4px 2px;border-radius:25px;position:fixed;text-align:center;left:5%;top:40%;z-index:10;background: #deffca;display:none;
+		}
+		#aside span{cursor:pointer;margin:8px auto;width:30px;height:30px;display:block;border-radius:50%;background-color: #55cd1f;line-height:30px;}
+		#aside #num1{background-color: #ffaa2d;}
+	</style>
+	<script src="jquery.js"></script>
+</head>
+<body>
+<div>
+	<div class="floor" id="floor0"><p>空白</p></div>
+	<div class="floor" id="floor1"><p>周周惠价</p></div>
+	<div class="floor" id="floor2"><p>美价美品推荐</p></div>
+	<div class="floor" id="floor3"><p>韩风时尚</p></div>
+	<div class="floor" id="floor4"><p>热销商品</p></div>
+	<div class="floor" id="floor5"><p>百货店促销</p></div>
+</div>
+
+<div id="aside">
+	<span id="num1" class="num">1</span>
+	<span id="num2" class="num">2</span>
+	<span id="num3" class="num">3</span>
+	<span id="num4" class="num">4</span>
+	<span id="num5" class="num">5</span>
+</div>
+<script>
+	$(function(){
+		$(window).scroll(function(){
+			if($("body").scrollTop() > ($("#floor0").height() - 800)){
+				$("#aside").css({"display":"block"});
+			}else{
+				$("#aside").css({"display":"none"});
+			}
+            $(".num").css({"backgroundColor":"#55cd1f"}); 
+		    if($("body").scrollTop() >= $("#floor1").offset().top && $("body").scrollTop() < $("#floor2").offset().top){
+				$("#num1").css({"backgroundColor":"#ffaa2d"});
+			}else if($("body").scrollTop() >= $("#floor2").offset().top && $("body").scrollTop() < $("#floor3").offset().top){
+                $("#num2").css({"backgroundColor":"#ffaa2d"});
+			}else if($("body").scrollTop() >= $("#floor3").offset().top && $("body").scrollTop() < $("#floor4").offset().top){
+                $("#num3").css({"backgroundColor":"#ffaa2d"});
+            }else if($("body").scrollTop() >= $("#floor4").offset().top && $("body").scrollTop() < $("#floor5").offset().top){
+                $("#num4").css({"backgroundColor":"#ffaa2d"});
+            }else if($("body").scrollTop() >= $("#floor5").offset().top){
+                $("#num5").css({"backgroundColor":"#ffaa2d"});
+			}
+		});
+		$(".num").click(function(){
+			var _index = $(this).index()+1;
+			//console.log(_index);
+			var _top = $("#floor"+_index).offset().top;
+			$("body").animate({"scrollTop":_top},1000);
+		});
+	});
+
+</script>
+
+</body>
+</html>

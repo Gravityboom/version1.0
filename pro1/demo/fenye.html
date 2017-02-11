@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#container{margin:0 auto;width:400px;height:100px;}
+		.box{float:left;margin:0 20px;}
+		.box img{width:100px;}
+	#button{position:absolute;bottom:40%;left:30%;}
+	#button span{margin:0 3px;display:inline-block;width:30px;height:30px;text-align:center;line-height:30px;background:#ccc;}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+	<div id="button"></div>
+	<script src="Ajax.js"></script>
+	<script>
+
+	function loadImg(_s,_e){
+		var _container = document.getElementById("container");
+		ajaxRequest("post","images.json",true,null,function(data){
+			var _data = JSON.parse(data);
+			var _div=null,_img=null;
+			for(var i=_s;i<_e;i++){
+				_div = document.createElement("div");
+				_div.className = "box";
+				_div.innerHTML = i;
+				_img = document.createElement("img");
+				_img.src = "images/"+_data["images"][i]+".jpg";
+				_div.appendChild(_img);
+				_container.appendChild(_div);
+			}
+		});
+	}
+
+	function pushButton(num){
+		var _span=null;
+        var _root=document.createElement("div");
+        _root.className="root";
+        var _button=document.getElementById("button");
+        _button.appendChild(_root);
+        for(var i=0;i<num;i++){
+            _span=document.createElement("span");
+            _span.innerText=i+1;
+            _root.appendChild(_span);
+        }
+        boundEvent(_root);
+	}
+
+	function boundEvent(_root){
+		_root.children[0].style.backgroundColor = "red";
+		for(i=0;i<_root.children.length;i++){
+			_root.children[i].onclick=function(){
+				var _container=document.getElementById("container");
+				_container.innerHTML="";//清空原来页上内容
+				loadImg(parseInt(this.innerText)*2+2,parseInt(this.innerHTML)*2+4);
+				changeButton(this,_root);
+			}
+		}
+	}
+
+	function changeButton(current,_root){
+		var _length = _root.children.length;
+		//超过中间数时
+		for(var i = 0;i < _length;i++){
+			_root.children[i].style.display = "inline-block";
+			_root.children[i].style.backgroundColor = "#ccc";
+		}
+
+		if(parseInt(current.innerText) >= parseInt(_root.children[_length-4].innerText)){
+			_root.children[4].style.backgroundColor="red";
+			//_root.children[4].style.backgroundColor = "#red";
+			var n = parseInt(current.innerText)-parseInt(_root.children[4].innerText);//计算和中间数的差值
+			for(var i = 0;i < _length;i++){
+				_root.children[i].innerText = n + parseInt(_root.children[i].innerText);
+				if(parseInt(_root.children[i].innerText)>33){
+					_root.children[i].style.display = "none";
+				}
+			}
+
+		}else if((parseInt(current.innerText) <= parseInt(_root.children[3].innerText))&&(parseInt(current.innerText)>=5)){
+			_root.children[4].style.backgroundColor="red";
+			var n = parseInt(_root.children[4].innerText)-parseInt(current.innerText);
+			for(var i = 0;i < _length;i++){
+				_root.children[i].innerText = parseInt(_root.children[i].innerText)-n;
+			}
+		}else if(parseInt(current.innerText)<=5){
+			_root.children[parseInt(current.innerText)-1].style.backgroundColor = "red";
+			for(var i = 0;i<_length;i++){
+				_root.children[i].innerText = i+1;
+			}
+		}
+	}
+
+window.onload=function(){
+	var _s=4,_e=6;
+	loadImg(_s,_e);
+	pushButton(9);
+}
+	</script>
+</body>
+</html>

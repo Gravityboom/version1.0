@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>register</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/register.css">
+	<link rel="stylesheet" href="css/footer2.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/register.js"></script>
+	<script src="js/head.js"></script>
+</head>
+<body>
+	<!-- 顶部导航开始 -->
+	<nav id="top_nav_container">
+		<div id="top_nav">
+			<ul id="top_nav_left">
+				<li><span>欢迎来到11街道</span></li>
+				<li id="web_mark">收藏网页<span>★</span></li>
+			</ul>
+
+			<ul id="top_nav_right">
+				<li><a href="login.html">登录</a></li>
+				<li><a href="register.html">注册会员</a></li>
+            	<li><a href="shoppingcar.html">购物车</a><em>0</em></li>
+				<li id="street11">
+					<a href="#" id="mystreet">我的11街</a>
+					<div id="my11street">
+						<ul>
+							<li><a href="">订单/配送查询</a></li>
+							<li><a href="">关注商品</a></li>
+							<li><a href="">优惠券</a> <span>|</span> <a href="#">积分</a></li>
+							<li><a href="">会员信息</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#">客服中心</a></li>
+				<li id="language_container">
+					<a href="#" id="language"><span></span>中文</a>
+					<div id="language_menu">
+						<ul>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Korea
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Global
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Malaysia
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Indonesia
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<span class="flag_ico"></span>
+									Turkey
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- 顶部导航结束 -->
+
+	<!-- search部分开始 -->
+	<nav class="middle_nav_container">
+		<div id="middle_nav">
+			<h1 ><a href="#"><img src="ico_images/logo_v2.png" alt=""></a></h1>
+			<div class="search">
+				<div class="search_inner">
+					<input id="search_text" type="text">
+					<button id="search_button"></button>
+				</div>
+				<div class="hot_word">
+					<ul>
+						<li><a href="javascript:void(0)">niBBuns</a></li>
+						<li><a href="javascript:void(0)">CHERRYKOKO</a></li>
+						<li><a href="javascript:void(0)">FENDI</a></li>
+						<li><a href="javascript:void(0)">好利卡好利卡</a></li>
+						<li><a href="javascript:void(0)">etudehouse</a></li>
+						<li><a href="javascript:void(0)">芭妮兰banila co</a></li>
+						<li><a href="javascript:void(0)">鬼怪</a></li>
+						<li><a href="javascript:void(0)">阿迪达斯</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="search_right">
+				<a href="#"><img src="images/2016050911060950939_7437155_1.png" alt=""></a>
+			</div>
+		</div>
+	</nav>
+	<!-- search部分结束 -->
+
+	<!-- 导航部分开始 -->
+	<nav class="nav_main_container">
+		<div id="nav_main">
+			<div id="nav_menu">
+				<div>
+					<a href="11street.html" class="home_web">首页</a>
+					<button id="nav_btn">全部分类</button>
+					<div id="nav_list">
+						<div class="nav_list_title">
+							<button id="nav_btn_close">全部分类</button>
+						</div>
+						<div class="nav_list_body">
+						</div>
+						<button id="nav_btn_close2"></button>
+					</div>
+
+				</div>
+
+				<ul class="nav_category">
+					<li><a href="javascript:void(0)">领券/活动</a></li>
+					<li><a href="javascript:void(0)">聚惠街</a></li>
+					<li><a href="javascript:void(0)">值得淘</a></li>
+					<li><a href="javascript:void(0)">99好货珍藏</a></li>
+					<li><a href="javascript:void(0)">韩风时尚</a></li>
+				</ul>
+				<a href="#" class="nav_cart">
+					<em>0</em>
+				</a>
+			</div>
+		</div>
+	</nav>
+	<!-- 导航部分结束 -->
+
+
+	
+	<article class="register">
+		<div class="title">
+			<h1><span>注册会员</span></h1>
+		</div>
+		<p><strong>懂你“美”个瞬间的导购街！</strong></p>
+		<div class="weibo_zhifubao">
+			<button  class="login_weibo">微博账号登录</button>
+			<button  class="login_zhifubao">支付宝账号登录</button>
+		</div>
+		<div class="register_main">
+			<dl>
+				<dt><span></span>邮箱</dt>
+				<dd>
+					<input id="register_email" type="text" placeholder="请输入邮箱地址" name="email">
+					<em class="check"></em>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span></span>密码</dt>
+				<dd>
+					<input id="register_password" type="password" name="password">
+					<em class="check"></em>
+				</dd>
+			</dl>
+			<dl>
+				<dt><span></span>再次确认密码</dt>
+				<dd>
+					<input id="register_rePassword" type="password" name="password">
+					<em class="check"></em>
+				</dd>
+			</dl>
+			<dl>
+				<dt>选择验证方式</dt>
+				<dd class="check_way">
+					<input id="check_way_phone" type="radio" name="check_way">
+					<label for="check_way_phone">手机号码验证</label>
+					<input id="check_way_email" type="radio" name="check_way">
+					<label for="check_way_email">邮箱验证</label>
+				</dd>
+			</dl>
+			<dl class="shoujihaoma">
+				<dt><span></span>手机号码</dt>
+				<dd>
+					<span class="check_phone_ico"></span>
+					<select name="countryNo">
+						<option value="CN">中国 (+86)</option>
+						<option value="HK">香港 (+852)</option>
+					</select>
+					<input id="phone_number" type="text" placeholder="请输入手机号码。(01234567890)">
+					<em class="check"></em>
+				</dd>
+			</dl>
+			<dl class="check_code">
+				<dt><span></span>验证码</dt>
+				<dd>
+					<input id="check_code" type="text">
+					<img src="ico_images/getCaptchaImage.png" alt="">
+					<button></button>
+					<em class="check"></em>
+				</dd>
+			</dl>
+			<dl class="message_code">
+				<dt><span></span>手机号码验证</dt>
+				<dd>
+					<input id="message_code" type="text">
+					<button onclick="sendMessageCode()">获取短信验证码</button>
+					<em class="check" ></em>
+				</dd>
+			</dl>
+			<dl>
+				<dt>同意接收邮件</dt>
+				<dd>
+					<input id="c1box" type="checkbox"><label for="c1box">同意接收来自11街的优惠信息及促销活动信息的宣传邮件。</label>
+				</dd>
+			</dl>
+			<dl>
+				<dt>同意接收短信</dt>
+				<dd>
+					<input id="c2box" type="checkbox"><label for="c2box">同意接收来自11街的优惠信息及促销活动信息的宣传短信。</label>
+				</dd>
+			</dl>
+			<dl>
+				<dt>推荐人代码</dt>
+				<dd>
+					<input id="goodman" type="text">
+				</dd>
+			</dl>
+		</div>
+		
+		<span class="read_it">
+			<input type="checkbox" id="readit">
+			<label for="readit">请务必仔细阅读并同意中文版的</label><a href="#">网站使用条款</a>,<a href="#">电子金融交易使用条款</a>和<a href="#">个人信息处理方针</a>。
+		</span>
+		<p class="agree"><em class="check">请同意网站使用条款。</em></p>
+		<div class="sub"><button id="btn_register" onclick="checkRegister()">注册会员</button></div>
+	</article>
+	<div id="footer"></div>
+</body>
+</html>

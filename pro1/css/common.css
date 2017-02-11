@@ -1,0 +1,16 @@
+/* CSS Document */
+a{text-decoration:none;color:#000}
+ul,li,ol{list-style:none}
+img{border:none}
+em{font-style:normal;}
+.clear:after{clear:both;display:block;visibility:hidden;content:"";}
+.clear{zoom:1;}
+body,html{height:100%;}
+body{font-family:"Microsoft YaHei",Tahoma, Verdana;font-size:12px;margin:0;padding:0;border:none;}
+html,div,p,span,form,legend,fieldset,h1,h2,h3,h4,h5,h6,hr,ul,li,ol,dl,dd,dt,nr{margin:0;padding:0;border:none;}
+button,img,a,input,textarea,th,td,table,label{margin:0;padding:0;}
+/* input:focus {outline: none;} */
+.red{color: red;}
+.blue{color: blue;}
+.green{color: green;}
+.border-r{border: 1px solid #666; border-radius: 5px;}
