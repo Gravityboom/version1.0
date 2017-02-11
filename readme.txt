@@ -1,2 +1,2 @@
-﻿this is the first time to use github.
-update 02.06 2017
+﻿
+add a simple cart by angularJS-----update 02.11 2017
