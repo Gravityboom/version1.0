@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="libs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-controller="myCtrl">
+		{{name}}
+		<div ng-controller="homeCtrl">
+			{{name}}-------{{$parent.name}}
+			<div ng-controller = "testCtrl">
+				{{name}}-------{{$parent.name}}-------{{$parent.$parent.name}}
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		
+		app.controller("myCtrl",function($scope){
+			$scope.name="myCtrl";
+			
+		})
+		app.controller("homeCtrl",function($scope){
+			$scope.name="homeCtrl";
+			
+		})
+		app.controller("testCtrl",function($scope){
+			$scope.name="testCtrl";
+			
+		})
+		
+	</script>
+</html>

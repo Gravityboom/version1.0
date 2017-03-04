@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/dist/css/bootstrap.css" />
+		<script src="libs/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body >
+		<div class="container">
+			<div class="col-xs-3">
+				<a href="#!/HOme">首页</a>
+				<a href="#!/kind">分类</a>
+			</div>
+			<div class="col-xs-9">
+				<div ng-view></div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = angular.module("myApp",["ngRoute"]);
+		app.config(["$routeProvider",function($routeProvider){
+			$routeProvider.caseInsensitiveMatch = true;
+			$routeProvider
+					.when("/Home",{
+						templateUrl:"tpls/demo27home.html",
+//						controller:"homeController as homeCtrl"
+						controller:"homeController",
+						controllerAs:"homeCtrl"
+					})
+					.when("/kind",{
+						templateUrl:"tpls/demo27kind.html",
+//						controller:"kindController as kindCtrl"
+						controller:"kindController",
+						controllerAs:"kindCtrl"
+					})
+					.otherwise({
+						redirectTo:"/home"
+					})
+		}]);
+		
+		app.controller("homeController",function(){
+			this.name = "你好，首页"
+		});
+		app.controller("kindController",function($http){
+			this.name = "你好，分类";
+			var that = this;
+			$http.get("http://datainfo.duapp.com/shopdata/getclass.php").then(function(response){
+		//		console.log(response.data)
+				that.classList = response.data
+			});
+		});
+	</script>
+</html>

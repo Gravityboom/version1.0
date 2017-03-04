@@ -1,0 +1,17 @@
+
+<button ng-click="goCart()">去购物车</button>
+<div class="row">
+	<div ng-hide = "isLoading">{{loadTest}}</div>
+  <div ng-show = "isLoading" class="col-sm-4 col-md-3 col-xs-6 proItem"  ng-repeat = "proItem in proList | limitTo:lineNumber | filter:{goodsName:searchTxt}">
+    <div ng-show = "true" class="thumbnail" ng-click="goDetail(proItem)">
+      <img ng-src="{{proItem.goodsListImg}}" alt="..." class="proImg" >
+      <div class="caption">
+        <h3 class="test">{{proItem.goodsName}}</h3>
+        <p>{{proItem.className}}</p>
+        <p>{{proItem.price | number:2}}</p>
+        <p>{{proItem.discount | discountFilter}}折</p>
+        <p><button class="btn btn-primary" ng-click="addCart(proItem);$event.stopPropagation();">购物车</button> </p>
+      </div>
+    </div>
+  </div>
+</div>

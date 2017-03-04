@@ -1,0 +1,7 @@
+<div id={{helloId}}>
+	<ul>
+		<li class="{{$index == 0?'active':''}}" ng-repeat= "str in helloData" ng-click="getIndex($index)">
+			{{str+"---"+$index}}
+		</li>
+	</ul>
+</div>

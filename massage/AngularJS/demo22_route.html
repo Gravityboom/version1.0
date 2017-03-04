@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/dist/css/bootstrap.css" />
+		<script src="libs/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		.proItem  .thumbnail img.proImg{
+				width:100%;
+				height: 200px; 
+				display: block;
+			}
+			@media  (max-width: 768px) {
+				.proItem  .thumbnail img.proImg{
+				width:100%;
+				height: 150px; 
+				display: block;
+			}
+			}
+			.test{
+				width: 100%;
+				height: 26px;
+				line-height: 26px;
+				font-size: 22px;
+				overflow: hidden;
+				text-overflow: ellipsis;	
+				white-space: nowrap;
+			} 
+	</style>
+	</head>
+	<body >
+		<div class="container">
+			<div class="col-xs-3">
+				<ul class="list-group">
+					<a href="#!/home"><li class="list-group-item">首页</li></a>
+					<a href="#!/kind"><li class="list-group-item">分类</li></a>
+					<a href="#!/cart"><li class="list-group-item">购物车</li></a>
+					<a href="#!/user"><li class="list-group-item">我的</li></a>
+					<a href="#!/more"><li class="list-group-item">更多</li></a>
+				</ul>
+			</div>
+			<div class="col-xs-9">
+				<!--<ng-view></ng-view>-->
+				<div ng-view></div>
+			</div>
+		</div>
+	</body>
+	<script src="js/demo22app.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/demo22filter.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/demo22config.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/demo22HomeController.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/demo22CartController.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/demo22KindController.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/demo22UserController.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/demo22MoreController.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/demo22DetailController.js" type="text/javascript" charset="utf-8"></script>
+</html>

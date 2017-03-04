@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="libs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body ng-controller="myCtrl">
+		<input ng-model="input" />
+		<input ng-model="output" />
+		<button ng-click="tran(input)">转换</button>
+	</body>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.factory("myService",function(){
+			return {
+				tranString:function(input){
+					if(!input){
+						return input;
+					}
+					
+					var output = "";
+					var len = input.length;
+					for(var i = 0; i < len; i++){
+						if(i > 0 && input[i] == input[i].toUpperCase()){
+							output = output + "　";
+						}else{
+							output = output;
+						}
+						output+=input[i];
+					}
+					
+					return output;
+				}
+			}
+		})
+		app.controller("myCtrl",function($scope,myService){
+			$scope.tran = function(input){
+				$scope.output=myService.tranString(input);
+			}
+			
+		})
+		
+		
+	</script>
+</html>

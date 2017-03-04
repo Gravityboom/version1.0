@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/dist/css/bootstrap.css" />
+		<style type="text/css">
+			.table-striped .tableHeader{
+				background-color: #f66;
+			}
+			.table-striped > tbody > tr:nth-child(2) {
+			    background-color: #f66;
+			    color: #fff;
+			    font-weight: bold;
+			}
+			tr > td{
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body ng-controller="myCtrl">
+				<table class="table table-bordered table-striped">
+			<tr>
+				<td>每页显示数量</td>
+				<td colspan="1">
+					<select name="" ng-model="selectNum">
+						<option value="12">12</option>
+						<option value="24">24</option>
+						<option value="36">36</option>
+					</select>
+				</td>
+				<td><button class="btn btn-default btn-xs" ng-click="prevPage(pageCode)">上一页</button></td>
+				<td><input ng-model="pageCode"/></td>
+				<td><button class="btn btn-primary btn-xs" ng-click="nextPage(pageCode)">下一页</button></td>
+				<td><input ng-model="searchText" /></td>
+			</tr>
+			<tr class="tableHeader">
+				<td>num</td>
+				<td ng-click="sortData('firstName')">firstName
+					<i ng-class="getClass('firstName')"></i>
+				</td>
+				<td ng-click="sortData('lastName')">lastName
+					<i ng-class="getClass('lastName')"></i>
+				</td>
+				<td ng-click="sortData('gender')">gender
+				<i ng-class="getClass('gender')"></i>
+				</td>
+				<td ng-click="sortData('salary')">salary
+				<i ng-class="getClass('salary')"></i>
+				</td>
+				<td >birthday</td>
+				<td>likeNum</td>
+				<td>unLikeNum</td>
+				<td>likeBtn</td>
+				<td>unLikeBtn</td>
+			</tr>
+			<tr ng-show="isShow" ng-repeat = "user in users | orderBy:sortStr:reverseData | filter:{firstName:searchText}">
+				<td>{{$index + 1 }}</td>
+				<td>{{user.firstName | lowercase}}</td>
+				<td>{{user.lastName | uppercase}}</td>
+				<td>{{user.gender | genderFilter}}</td>
+				<td>{{user.salary | currency : ($index == 4?"$":"￥")}}</td>
+				<td>{{user.birthday | date : "yyyy-MM-dd"}}</td>
+				<td>{{user.likeNum}}</td>
+				<td>{{user.unLikeNum}}</td>
+				<td><button class="btn btn-success btn-xs" ng-click="countLikeNum(user,$index)">喜欢</button></td>
+				<td><button class="btn btn-danger btn-xs" ng-click="countUnLikeNum(user,$index)">不喜欢</button></td>
+			</tr>
+			<tr ng-hide = "isShow">
+				<td colspan="10" class="text-center">
+					暂无数据
+				</td>
+			</tr>
+		</table>
+
+			
+	</body>
+	<script src="libs/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/demo16.js" type="text/javascript" charset="utf-8"></script>
+</html>

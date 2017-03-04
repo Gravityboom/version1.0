@@ -1,0 +1,8 @@
+<div id="{{helloId}}"> 
+	asdasdasdasdsadsa
+    <a  href="javascript:;" ng-repeat="attr in helloData" ng-class="{active:$first}">{{attr.val}}</a>  
+    <div ng-repeat="attr in helloData" ng-style="{display:$first?'block':'none'}">  
+        <img ng-src="{{attr.img}}"/>   
+        <p>{{attr.title}}</p>  
+    </div>  
+</div>  

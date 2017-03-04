@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app = "myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-controller = "myCtrl">
+		{{1+1}}
+		{{[1,1.1,2,5,9][3]}}
+		{{{name:"wxx",age:17}.name}}
+		{{name}}
+	</body>
+	<script src="libs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var app = angular.module("myapp",[]);
+//		app.controller("myCtrl",["$scope",function($scope){
+//			$scope.name="wxx007";
+//		}]);
+//		app.controller("myCtrl",function($scope){
+//			$scope.name="wxx007";
+//		});
+//		
+//		var myCtrl = function($scope){
+//			$scope.name="wxx007";
+//		}
+//		app.controller("myCtrl",myCtrl);
+	</script>
+</html>

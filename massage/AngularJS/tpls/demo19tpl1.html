@@ -1,0 +1,16 @@
+
+<!--<ul class="list-group">
+  <li class="list-group-item {{currentIndex == 0 ? 'active' :''}}" ng-click="changeItem('home',0)">首页</li>
+  <li class="list-group-item {{currentIndex == 1 ? 'active' :''}}" ng-click="changeItem('kind',1)">分类</li>
+  <li class="list-group-item {{currentIndex == 2 ? 'active' :''}}" ng-click="changeItem('cart',2)">购物车</li>
+  <li class="list-group-item {{currentIndex == 3 ? 'active' :''}}" ng-click="changeItem('user',3)">我的</li>
+  <li class="list-group-item {{currentIndex == 4 ? 'active' :''}}" ng-click="changeItem('more',4)">更多</li>
+</ul>-->
+	
+<ul class="list-group" >
+  <li ng-repeat = "item in items" class="list-group-item {{currentIndex == $index ? 'active' :''}}" ng-click="changeItem(item.type,$index)">{{item.title}}</li>
+  <!--<li class="list-group-item {{currentIndex == 1 ? 'active' :''}}" ng-click="changeItem('kind',1)">分类</li>
+  <li class="list-group-item {{currentIndex == 2 ? 'active' :''}}" ng-click="changeItem('cart',2)">购物车</li>
+  <li class="list-group-item {{currentIndex == 3 ? 'active' :''}}" ng-click="changeItem('user',3)">我的</li>
+  <li class="list-group-item {{currentIndex == 4 ? 'active' :''}}" ng-click="changeItem('more',4)">更多</li>-->
+</ul>

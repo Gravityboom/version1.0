@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/dist/css/bootstrap.css" />
+		<style type="text/css">
+			.table-striped .tableHeader{
+				background-color: #f66;
+			}
+			.table-striped > tbody > tr:nth-child(2) {
+			    background-color: #f66;
+			    color: #fff;
+			    font-weight: bold;
+			}
+			tr > td{
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body ng-controller="myCtrl"  ng-init='users = [
+		{
+			"icon":"***",
+			"title":"首页"
+		},
+		{
+			"icon":"***",
+			"title":"首页"
+		},
+		{
+			"icon":"***",
+			"title":"首页"
+		},
+		{
+			"icon":"***",
+			"title":"首页"
+		},{
+			"icon":"***",
+			"title":"首页"
+		}
+	]'>
+		<ul class="nav nav-pills" role="tablist">
+			  <li role="presentation" class="{{currentIndex==$index?'active':''}}" ng-repeat="user in users" ng-click="tabClick($index)"><p>{{user.icon}}</p><a href="#">{{user.title}}</a></li>
+			</ul>
+
+			
+	</body>
+	<script src="libs/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/demo18.js" type="text/javascript" charset="utf-8"></script>
+</html>

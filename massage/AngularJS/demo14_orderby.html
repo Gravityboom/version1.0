@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/dist/css/bootstrap.css" />
+		<style type="text/css">
+			.table-striped .tableHeader{
+				background-color: #f66;
+			}
+			.table-striped > tbody > tr:nth-child(2) {
+			    background-color: #f66;
+			    color: #fff;
+			    font-weight: bold;
+			}
+			tr > td{
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body ng-controller="myCtrl">
+				<table class="table table-bordered table-striped">
+			<tr>
+				<td>每页显示数量</td>
+				<td colspan="1">
+					<select name="" ng-model="selectNum">
+						<option value="12">12</option>
+						<option value="24">24</option>
+						<option value="36">36</option>
+					</select>
+				</td>
+				<td><button class="btn btn-default btn-xs" ng-click="prevPage(pageCode)">上一页</button></td>
+				<td><input ng-model="pageCode"/></td>
+				<td><button class="btn btn-primary btn-xs" ng-click="nextPage(pageCode)">下一页</button></td>
+				<td><input ng-model="searchText" /></td>
+			</tr>
+			<tr class="tableHeader">
+				<td>num</td>
+				<td ng-click="sortData('firstName')">firstName
+					<i ng-class="getClass('firstName')"></i>
+				</td>
+				<td ng-click="sortData('lastName')">lastName
+					<i ng-class="getClass('lastName')"></i>
+				</td>
+				<td ng-click="sortData('gender')">gender
+				<i ng-class="getClass('gender')"></i>
+				</td>
+				<td ng-click="sortData('salary')">salary
+				<i ng-class="getClass('salary')"></i>
+				</td>
+				<td >birthday</td>
+				<td>likeNum</td>
+				<td>unLikeNum</td>
+				<td>likeBtn</td>
+				<td>unLikeBtn</td>
+			</tr>
+			<!--<tr ng-repeat = "user in users | orderBy:'firstName'">按照firstName排序-->
+			<!--<tr ng-repeat = "user in users | orderBy:'-firstName'">按照firstName排序倒叙排序-->
+			<!--<tr ng-repeat = "user in users | orderBy:sortStr">按照变量来排序，点击的时候进行更改的，sortData()-->
+			<!--<tr ng-repeat = "user in users | orderBy:sortStr:reverseData">按照变量来排序，点击的时候进行更改的，sortData(),添加一个正反效果，上下三角
+				orderBy:sortStr:reverseData
+				按照sortStr变量排序
+				正反有reverseData来决定，如果为true，则为正序，反之为倒叙
+			-->
+			<tr ng-repeat = "user in users | orderBy:sortStr:reverseData | filter:searchText">
+				<!--全局搜索，每一个字段都会进行搜索
+			-->
+			<!--<tr ng-repeat = "user in users | orderBy:sortStr:reverseData | filter:{firstName:searchText}">
+				单个字段搜索
+				firstName搜索----作为标准，写在前面
+				searchText作为条件，写在后面
+				{firstName:searchText}，不能使用‘’，或者{{}}
+				
+			-->
+			<!--<tr ng-repeat = "user in users | orderBy:sortStr:reverseData | filter:{firstName:searchText}">-->
+				<td>{{$index + 1 }}</td>
+				<td>{{user.firstName | lowercase}}</td>
+				<td>{{user.lastName | uppercase}}</td>
+				<td>{{user.gender | uppercase}}</td>
+				<td>{{user.salary | currency : ($index == 4?"$":"￥")}}</td>
+				<td>{{user.birthday | date : "yyyy-MM-dd"}}</td>
+				<td>{{user.likeNum}}</td>
+				<td>{{user.unLikeNum}}</td>
+				<td><button class="btn btn-success btn-xs" ng-click="countLikeNum(user,$index)">喜欢</button></td>
+				<td><button class="btn btn-danger btn-xs" ng-click="countUnLikeNum(user,$index)">不喜欢</button></td>
+			</tr>
+		</table>
+
+			
+	</body>
+	<script src="libs/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//和html ng-app = "myApp"一一对应，[] 指代的意思是我们后期需要注入的各个模块
+		var app = angular.module("myApp", []);
+		app.controller("myCtrl", function($scope) {
+			var users = [
+				{
+					"firstName":"FanG",
+					"lastName":"vane",
+					"gender":"male",
+					"likeNum":0,
+					"unLikeNum":0,
+					"salary":10000,
+					"birthday":new Date('1998-01-01')
+				},
+				{
+					"firstName":"Sara",
+					"lastName":"rose",
+					"gender":"female",
+					"likeNum":0,
+					"unLikeNum":0,
+					"salary":20000,
+					"birthday":new Date('1998-01-01')
+				},
+				{
+					"firstName":"Mark",
+					"lastName":"bear",
+					"gender":"male",
+					"likeNum":0,
+					"unLikeNum":0,
+					"salary":30000,
+					"birthday":new Date('1998-01-01')
+				},
+				{
+					"firstName":"Pam",
+					"lastName":"hot",
+					"gender":"male",
+					"likeNum":0,
+					"unLikeNum":0,
+					"salary":40000,
+					"birthday":new Date('1998-01-01')
+				},
+				{
+					"firstName":"Wang",
+					"lastName":"lao",
+					"gender":"male",
+					"likeNum":0,
+					"unLikeNum":0,
+					"salary":1000,
+					"birthday":new Date('1998-01-01')
+				}
+			];
+			$scope.users = users;
+			var len = users.length;
+//			$scope.maxpageCode = Math.ceil(len/$scope.selectNum);
+			$scope.selectNum = 6;
+			$scope.pageCode = 1;
+			$scope.countLikeNum = function(user,id){
+				user.likeNum++;
+				console.log($scope.users);
+			}
+			$scope.countUnLikeNum = function(user,id){
+				user.unLikeNum++;
+			}
+			
+			$scope.prevPage = function(){
+				$scope.users = users;
+//				if($scope.pageCode == 1){
+//					$scope.pageCode = 1;
+//				}else{
+//					$scope.pageCode--;
+//				}
+				
+			}
+			$scope.nextPage = function(){
+//				$scope.users = users1;
+				
+//				if($scope.pageCode == $scope.maxpageCode){
+//					$scope.pageCode = $scope.maxpageCode;
+//				}else{
+//					$scope.pageCode++;
+//				}
+			}
+			
+			$scope.addUser = function(){
+				var firstName = $("#firstName").val();
+				var lastName = $("#lastName").val();
+				var obj = {
+					"firstName":firstName,
+					"lastName":lastName,
+					"gender":"male",
+					"likeNum":0,
+					"unLikeNum":0,
+					"salary":1000,
+					"birthday":new Date('1998-01-01')
+				}
+				users.push(obj);
+				$scope.users = users;
+			}
+			
+			$scope.sortStr = "firstName";
+			$scope.reverseData = false;//默认不能反向
+			$scope.sortData = function(str){
+				//orderBy:'name'表示按照正序排列，如果是"-name"，就是倒叙排列
+				//orderBy:'name'：reverseData   reverseData为true即正序，反之则倒叙
+				//每一列都有自己的正序或者倒叙规则
+				//先判断是不是自己，如果是自己，若为真，按照自己的变为自己的反向，其余列都为false
+				$scope.reverseData = ($scope.sortStr == str)?!$scope.reverseData :"false";
+				//按照哪一个字段进行排序
+				$scope.sortStr = str;
+			}
+			
+			$scope.getClass = function(str){
+				if($scope.sortStr == str){
+					return $scope.reverseData ? "glyphicon glyphicon-chevron-up":"glyphicon glyphicon-chevron-down"
+				}
+//				else{
+//					return "glyphicon glyphicon-chevron-down";
+//				}
+			}
+		});
+	</script>
+	<script type="text/javascript">
+		function trimNumber(str){ 
+			var testStr = str.replace(/\d+/g,''); 
+			return testStr.split('').reverse().join('');
+		} 
+		
+		alert(trimNumber("1a2b3c4d"));
+	</script>
+</html>

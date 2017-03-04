@@ -1,0 +1,16 @@
+我是分类
+<div class="row">
+	<div ng-hide = "isLoading">正在加载</div>
+  <div ng-show = "isLoading" class="col-sm-4 col-md-3 col-xs-6 proItem"  ng-repeat = "proItem in proList | limitTo:lineNumber | filter:{goodsName:searchTxt}">
+    <a href="#!/detail{{proItem.goodsID}}?type=kind"><div ng-show = "true" class="thumbnail" >
+      <img ng-src="{{proItem.goodsListImg}}" alt="..." class="proImg" >
+      <div class="caption">
+        <h3 class="test">{{proItem.goodsName}}</h3>
+        <p>{{proItem.className}}</p>
+        <p>{{proItem.price | number:2}}</p>
+        <p>{{proItem.discount | discountFilter}}折</p>
+        <p><a href="#" class="btn btn-primary" role="button">购物车</a> </p>
+      </div>
+    </div></a>
+  </div>
+</div>

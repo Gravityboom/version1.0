@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app = "myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/dist/css/bootstrap.min.css"/>
+	</head>
+	<body ng-controller = "myCtrl">
+		<div class="container">
+			<input ng-model="fis" />
+			<table class="table table-bordered">
+				<tr>
+					<td>序号</td>
+					<td>姓名</td>
+					<td>年龄</td>
+					<td>性别</td>
+					<td>喜欢</td>
+					<td>不喜欢</td>
+				</tr>
+				<tr ng-repeat="user in users | orderBy:'-name' | filter:{name:fis}">
+					<td>{{$index}}</td>
+					<td>{{user.name|uppercase}}</td>
+					<td>{{user.age|number:2}}</td>
+					<td>{{user.sex |myFilter}}</td>
+					<td><button class="btn btn-success" ng-click="likeFn(user)">喜欢{{user.like < 0? 0:user.like}}</button></td>
+					<td><button class="btn btn-success" ng-click="likeFn1(user)">不喜欢</button></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	<script src="libs/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var app = angular.module("myapp",[]);
+		app.filter("myFilter",function(){
+			return function(myFilter){
+				if(myFilter == 0){
+					return "女";
+				}else{
+					return "男";
+				}
+			}
+		});
+		app.controller("myCtrl",["$scope",function($scope){
+			$scope.users = [{
+				name:"laowang",
+				age:80,
+				sex:1,
+				like:100
+			},
+			{
+				name:"wanglao1",
+				age:80,
+				sex:1,
+				like:10
+			},{
+				name:"xiaoming",
+				age:80,
+				sex:0,
+				like:1
+			}];
+			$scope.likeFn = function(user){
+				user.like++;
+			}
+			$scope.likeFn1 = function(user){
+				user.like--;
+			}
+		}]);
+	</script>
+</html>

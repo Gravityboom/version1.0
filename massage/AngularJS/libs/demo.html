@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="AngularApp">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div ng-controller="firstController">
+		<p>{{greeting.text}},Angular</p>
+	</div>
+</body>
+<script type="text/javascript" src="angular.min.js"></script>
+<script type="text/javascript">
+	var _app = angular.module("AngularApp",[]);
+	_app.controller("firstController",function($scope){
+		$scope.greeting = {
+			"text":"hello"
+		}
+	});
+</script>
+</html>

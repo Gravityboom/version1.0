@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="libs/dist/css/bootstrap.css" />
+		<script src="libs/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="libs/dist/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="libs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.active{
+				color: #f66;
+			}
+		</style>
+	</head>
+	<body ng-controller="myCtrl">
+		<hello-world hello-id="test1" hello-data="data1"></hello-world>
+		<hello-world hello-id="test2" hello-data="data1"></hello-world>
+		<!--<hello-world hello-id="test2" hello-data="data1"></hello-world>2-->
+		<!--<div class="hello-world"></div>2-->
+		<!--<div hello-world></div>3-->
+		<!-- directive:hello-world -->
+	</body>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.dire
+		app.directive("helloWorld",function(){
+			return {
+				restrict : 'E',//以何种方式调用我们的自定义指令 E(element)  C(class)   M(comments)   A(attr)
+		        replace : true,//替换,把当前自定义的指令标签替换成引入的标签  
+//		        template : '<div>hello angular</div>',//填充内容
+				templateUrl:"tpls/demo29directive.html",
+				scope : { //作用域隔离 ： 每个作用域执行的是自己的功能  &用户函数
+                    helloId : '@', //拿所有helloId的字符串  
+                    helloData : '=' //拿所有helloData属性的变量名  
+                }, 
+//              link:function(scope,element,attr){//dom操作
+//              	element.on("click","li",function(){
+//              		console.log("sdasdasdas")
+//              		console.log($(this).index())
+//              		$(this).addClass("active").siblings("li").removeClass("active");
+//              	})
+//              }
+                
+               link : function( scope , element , attr ){ //dom操作  
+                        element.on('click','a',function(){  
+                            $(this).addClass('active').siblings('a').removeClass('active');  
+                            $(this).siblings('div').eq($(this).index()).css('display','block').siblings('div').css('display','none')  
+                        });  
+                    }  
+			}
+		});
+		
+		
+		
+		app.controller("myCtrl",function($scope){
+			$scope.data1 = [
+				{'val':'小花','title':'它是一个比较帅气的男孩儿',"img":"img/introAvatar.png"},  
+                {'val':'小兰','title':'它有着一张跟年龄不服的脸庞',"img":"img/introAvatar.png"},  
+                {'val':'小光','title':'它是一个比较任性的男孩儿',"img":"img/introAvatar.png"},  
+                {'val':'小赫','title':'它是个逗比',"img":"img/introAvatar.png"} 
+			]
+			$scope.data2 = ["wxx","wpj","qss"];
+			$scope.data3 = ["lw","mx","swy"];
+//			$scope.getIndex = function(id){
+//				alert(id)
+//			}
+		});
+	</script>
+</html>

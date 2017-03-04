@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app = "myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body ng-controller = "myCtrl">
+		{{users[0]}}
+		{{user.name}}是一个{{user.sex =="undefined"?"性别不详":user.sex}}的{{user.age}}的老人
+		<br />
+		<ul>
+			<li ng-repeat = "user in users">{{user}}-----{{$index}}----{{$parent.$index}}
+				<div ng-repeat = "item in user">
+					{{item.name}}***{{$index}}----{{$parent.$index}}
+				</div>
+				
+			
+			</li>
+		</ul>
+		<img src="img/banner1.jpg"/>
+		<img src="{{imgUrl}}"/>
+		<img ng-src="{{imgUrl}}"/>
+		<input ng-model="userName" />{{userName}}
+	</body>
+	<script src="libs/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var app = angular.module("myapp",[]);
+		app.controller("myCtrl",["$scope",function($scope){
+			$scope.name="wxx007";
+//			$scope.users = ["laowang","xiaoming","wxx"];
+			
+			$scope.users = [{
+				name:"laowang",
+				age:80,
+				sex:"undefined"
+			},{
+				name:"laowang",
+				age:80,
+				sex:"undefined"
+			},{
+				name:"laowang",
+				age:80,
+				sex:"undefined"
+			}];
+			$scope.user = {
+				name:"laowang",
+				age:80,
+				sex:"undefined"
+			};
+			
+			$scope.imgUrl = "img/banner1.jpg";
+			$scope.userName = "Wxx";
+		}]);
+	</script>
+</html>
